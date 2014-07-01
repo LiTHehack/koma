@@ -1,0 +1,20 @@
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic");
+body {
+  background-color: #441d2b;
+  font-family: "Source Sans Pro", "Helvetica Neue", sans-serif; }
+
+.keydown.deck-container {
+  font-size: 1.25em;
+  background: #441d2b; }
+  .keydown.deck-container .slide {
+    font-family: "Source Sans Pro", "Helvetica Neue", sans-serif;
+    background: #441d2b;
+    color: white; }
+    .keydown.deck-container .slide .content > * {
+      font-family: "Source Sans Pro", "Helvetica Neue", sans-serif; }
+  .keydown.deck-container h1 {
+    color: white; }
+  .keydown.deck-container a {
+    color: #cccccc; }
+    .keydown.deck-container a:hover {
+      color: #d01e4e; }
