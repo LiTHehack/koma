@@ -3,6 +3,8 @@
 $bg: #441D2B;
 $red: #D01E4E;
 $text: white;
+$code-bg: #2E3336;
+$code-text: #F8F8F2;
 
 body {
     background-color: $bg;
@@ -18,12 +20,21 @@ body {
       background: $bg;
       color: $text;
 
-      .content > * {
-        font-family: "Source Sans Pro", "Helvetica Neue", sans-serif;
+      &.pretty * {
+        font-weight: 300;
       }
+
+      .content {
+        > * {
+          font-family: "Source Sans Pro", "Helvetica Neue", sans-serif;
+        }
+      }
+
+
     }
 
-    h1 {
+    h1, h2, h3, h4, h5 {
+      font-weight: 300;
       color: white;
     }
 
@@ -35,4 +46,38 @@ body {
       }
     }
 }
+.keydown.deck-container .slide .content .CodeMirror {
+  background-color: $code-bg;
+  border: 0 !important;
+  font-family: Consolas, monospace;
 
+
+  .CodeMirror-gutter {
+    background-color: lighten($code-bg, 5%) !important;
+    border-right-color: lighten($code-bg, 10%) !important;
+  }
+
+  .CodeMirror-lines {
+    color: $code-text;
+
+    .cm-word {
+      color: #F38630;
+    }
+    .cm-null {
+      color: darken(white, 20%);
+    }
+    .cm-keyword {
+      color: #69D2E7;
+    }
+    .cm-comment {
+      color: lighten($code-bg, 20%);
+    }
+    .cm-number, .cm-string {
+      color: #2EBF7E;
+    }
+    .CodeMirror-cursor {
+      border-left-color: white !important;
+      border-left-width: 2px !important;
+    }
+  }
+}

@@ -22,12 +22,10 @@
     <script src="deck.js/support/modernizr.custom.js" type="text/javascript"></script>
   </head>
   <body class='deck-container keydown'>
-    <section class='slide'>
+    <section class='pretty slide'>
       <div class='spacer top'></div>
       <div class='content'>
         <h1>Java och Swing</h1>
-        
-        <p>TNM040 Kommunikation &amp; användargränssnitt</p>
         
         <p><a href="mailto:kontakt@lithehack.se">kontakt@lithehack.se</a> – <a href="http://lithehack.se/koma">lithehack.se/koma</a></p>
       </div>
@@ -36,27 +34,35 @@
     <section class='left slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h3>Idag</h3>
-        
         <ul>
         <li>grafik</li>
         <li>animering</li>
         <li>menyer</li>
+        <li>kortkommandon</li>
         <li>pop up-menyer</li>
         <li>submenyer</li>
         </ul>
         
         
-        <p>Skansholm <em>Java direkt</em> upplaga 6 eller 7, avsnitt 7.2, 12.4-7, 14.1</p>
+        <p>Skansholm <em>Java direkt</em> upplaga 6 eller 7 avsnitt 7.2, 12.4-7, 14.1</p>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Some sample code</h1>
+        <h2>Grafik</h2>
         
-        <p><textarea class='code' display='none' mode='text/x-java'>kåd</textarea>
+        <p>Standardklassen <code>java.awt.Graphics</code> kan användas för att rita enkla figurer.</p>
+        
+        <p>Linjer, ellipser, rektanglar och text.</p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='code slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><textarea class='code' display='none' mode='text/x-java'>public class MyPanel extends JPanel&#x000A;{&#x000A;  // instansvariabler&#x000A;  // konstruktorer&#x000A;  // instansmetoder&#x000A;&#x000A;  // rita figuren, måste finnas&#x000A;  public void PaintComponent(Graphics g)&#x000A;  {&#x000A;    int a = b;&#x000A;    int s = 300;&#x000A;    String s = 'haha';&#x000A;    super.paintComponent(g);&#x000A;&#x000A;    g.drawAAA(...);&#x000A;    g.fillAAA(...);&#x000A;  }&#x000A;  // flera metoder möjliga&#x000A;}</textarea>
     </p>
       </div>
       <div class='spacer bottom'></div>
