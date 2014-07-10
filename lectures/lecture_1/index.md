@@ -17,9 +17,15 @@
 
 Skansholm *Java direkt* upplaga 6 eller 7 avsnitt 7.2, 12.4-7, 14.1
 
-!SLIDE
+!SLIDE pretty
 
-## Grafik
+# Grafik
+
+!NOTES
+
+* viktigt
+
+!SLIDE left
 
 Standardklassen `java.awt.Graphics` kan användas för att rita enkla figurer.
 
