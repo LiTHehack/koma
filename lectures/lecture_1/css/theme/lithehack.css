@@ -137,3 +137,10 @@ body {
 
 .reveal .left-aligned {
   text-align: left; }
+
+.reveal section img.plain {
+  border: none;
+  box-shadow: none; }
+
+.reveal .slides section .fragment.irrelevant.current-fragment {
+  opacity: .4; }
