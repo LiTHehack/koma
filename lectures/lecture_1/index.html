@@ -70,21 +70,44 @@
 
 				<section data-background="#441D2B">
 					<h1>Grafik</h1>
+					<h3><code><a href="http://docs.oracle.com/javase/7/docs/api/java/awt/package-summary.html">java.awt</a>.<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html">Graphics</a></code></h3>
 
 					<aside class="notes">
-						Tyvärr inte en massa koola polygoner. <br>
 						Grundläggande geometriska objekt.
 					</aside>
 				</section>
 
 				<section>
-					<h2>Kåd</h2>
+					<p>
+						Standardklassen <code><a href="http://docs.oracle.com/javase/7/docs/api/java/awt/package-summary.html">java.awt</a>.<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html">Graphics</a></code> kan användas för att rita enkla figurer med hjälp av ett antal olika metoder.
+					</p>
+					<p>
+						<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html#drawLine(int,%20int,%20int,%20int)">Linjer</a>,
+						<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html#drawOval(int,%20int,%20int,%20int)">ellipser</a>,
+						<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html#drawRect(int,%20int,%20int,%20int)">rektanglar</a>,
+						bilder,
+						<a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html#drawString(java.lang.String,%20int,%20int)">text</a>,
+						mm.
+					</p>
+
+					<aside class="notes">
+						AWT – grafiska gränssnitt osv
+					</aside>
+				</section>
+
+				<section>
+					<h4>
+						Exempel
+					</h4>
+					<p>
+						Subklass till <code>JPanel</code>.
+					</p>
 					<pre><code contenteditable class="java">
 public class MyPanel extends JPanel
 {
-  // instansvariabler
-  // konstruktorer
-  // instansmetoder
+  // instansvariabler...
+  // konstruktorer...
+  // instansmetoder...
 
   // rita figuren, måste finnas
   public void paintComponent(Graphics g)
@@ -94,9 +117,12 @@ public class MyPanel extends JPanel
     g.drawAAA(...);
     g.fillAAA(...);
   }
-  // flera metoder möjliga
+  // flera metoder möjliga...
 }
 					</code></pre>
+					<p>
+						<code><a href="http://docs.oracle.com/javase/7/docs/api/javax/swing/JComponent.html#paintComponent(java.awt.Graphics)">paintComponent</a></code> är en metod som är <code>protected</code>, anropas endast via via <code><a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Component.html#repaint()">repaint()</a></code>.
+					</p>
 				</section>
 
 				<section data-markdown>

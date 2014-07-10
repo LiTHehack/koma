@@ -9,11 +9,13 @@
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #cbcbcb;
+$red: #D01E4E;
+$purple: #441D2B;
 
 $mainFont: 'Source Sans Pro', sans-serif;
 $mainColor: #111;
 
-$linkColor: #D01E4E;
+$linkColor: $red;
 $linkColorHover: lighten( $linkColor, 20% );
 
 $headingFont: 'Montserrat', Impact, sans-serif;
