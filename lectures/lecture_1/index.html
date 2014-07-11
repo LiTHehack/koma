@@ -34,7 +34,7 @@
 				<section data-background="img/lithehack.jpg">
 					<h2>LiTHehack? Här?</h2>
 					<p>
-						<a href="mailto:kontakt@lithehack.se">kontakt@lithehack.se</a> &mdash; <a href="http://lithehack.se/koma">lithehack.se/koma</a>
+						<a href="mailto:kontakt@lithehack.se">kontakt@lithehack.se</a> <br> <a href="http://lithehack.se/koma">lithehack.se/koma</a>
 					</p>
 					<p>
 						Tisdagar och torsdagar, 17-19
@@ -47,7 +47,7 @@
 					</aside>
 				</section>
 
-				<section class="left-aligned">
+				<section class="left">
 					<h3>Idag</h3>
 					<p>
 						<ul>
@@ -157,7 +157,7 @@ public class MyPanel extends JPanel
 					</aside>
 				</section>
 
-				<section class="left-aligned">
+				<section class="left">
 					<p>
 						Standardklassen <code>javax.swing.<a href="http://docs.oracle.com/javase/7/docs/api/javax/swing/Timer.html">Timer</a></code> kan användas för att generera <code>ActionEvent</code>s på tidsbasis.
 					</p>
@@ -201,9 +201,9 @@ public void actionPerformed(ActionEvent e)
 					</aside>
 				</section>
 
-				<section class="left-aligned">
+				<section class="left">
 					<p>
-						<code>JFrame</code> består av fönster med kanter och titelrad. Detta fönster kan ha en menyrad!
+						En menyrad läggs till på <code>JFrame</code>.
 					</p>
 					<p>
 						En förenklad klasshiearki för menyer:
@@ -230,19 +230,276 @@ public void actionPerformed(ActionEvent e)
 					<p class="fragment fade-in" data-fragment-index="1">
 						Motsvarar klasserna <code>JButton</code>, <code>JCheckBox</code> och <code>JRadioButton</code>.
 					</p>
+
+					<aside class="notes">
+						JFrame har är ett fönster med kanter och titelrad. En meny läggs på liknande vis till detta.
+					</aside>
 				</section>
 
-			</div>
+				<section class="left">
+					<h3><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/swing/JMenuBar.html">JMenuBar</a></code></h3>
+					<p>
+						<ul>
+							<li><code>JMenuBar();</code> &mdash; skapa en menyrad</li>
+							<li><code>add(myMenu);</code> &mdash; placera menyn <code>myMenu</code> i menyraden, vänster till höger</li>
+						</ul>
+					</p>
+					<p>
+						Menyraden <code>myMenuBar</code> placeras i fönstret <code>w</code> med <code>w.setMenuBar(myMenuBar);</code>.
+					</p>
+				</section>
 
+				<section class="left">
+					<h3><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/swing/JMenu.html">JMenu</a></code></h3>
+					<p>
+						<ul>
+							<li><code>JMenu("title");</code> &mdash; skapa meny med titeln <code>title</code></li>
+							<li><code>add(menuItem);</code> &mdash; lägg till menyalternativet <code>menuItem</code> i menyn. Sker uppifrån och ned.</li>
+							<li><code>addSeparator();</code> &mdash; lägg till en horizontell linje i menyn.</li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Konstruktor och några metoder. <br>
+						Rita struktur! <br>
+						Till vårt fönster lägger vi också till annat. <br>
+						Tydligt exempel på objektorienterad struktur. Vi slänger på grejer lite som vi vill, utan att göra det krångligt.
+					</aside>
+				</section>
+
+				<section class="left">
+					<p>
+						Menyalternativen kan exempelvis vara
+					</p>
+					<p>
+						<ul>
+							<li><code>JMenuItem</code> &mdash; ett vanligt menyalternativ</li>
+							<li><code>JCheckBoxMenuItem</code> &mdash; en kryssruta</li>
+							<li><code>JRadioButtonMenuItem</code> &mdash; en radioknapp</li>
+							<li><code>JMenu</code> &mdash; en submeny</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<img src="img/demo/demo03.png" alt="" class="plain">
+					</p>
+					<pre><code contenteditable class="java">
+private JMenuBar mnb = new JMenuBar();
+
+private JMenu menuFile = new JMenu("File");
+private JMenu menuEdit = new JMenu("Edit");
+private JMenu menuHelp = new JMenu("Help");
+
+public Demo03()
+{
+  setJMenuBar(mnb);
+
+  mnb.add(menuFile);
+  mnb.add(menuHelp);
+  mnb.add(menuEdit);
+
+  mniCircle.addActionListener(this);
+  mniSquare.addActionListener(this);
+
+  mnuEdit.add(mniCircle);
+  mnuEdit.add(mniSquare);
+					</code></pre>
+				</section>
+
+				<section data-background="#441D2B" class="big">
+					<h1>Kortkommandon</h1>
+					<p>
+						Aka. <em>Hur du får användaren att känna sig riktigt hemma i ditt program</em>
+					</p>
+
+					<aside class="notes">
+						Vidare till kortkommandon. <br>
+						Ett sätt att få användaren att bli rikigt van med ditt program. Inte bara för förstagångsanvändare! <br>
+						Målet är att ersätta peka-klick-peka-klick-peka-klick med en enkel kombination på tangentbordet, tex CTRL-X.
+					</aside>
+				</section>
+
+				<section>
+					<h2>mnemonics &mdash; accelerators</h2>
+
+					<aside class="notes">
+						Två olika metoder i Swing. Mnemonics och accelerators. <br>
+						Mnemonics är ämnade för menyer och körs genom att användaren trycker ned ALT-knappen och samtidigt en bokstav. Dessa är oftast understrukna i menyn. Tex alt-f för file. <br>
+						Accelerators är kortkommandon som fungerar över hela programmet, och används oftast i kombination med CTRL eller CMD.
+					</aside>
+				</section>
+
+				<section>
+					<h3>mnemonics</h3>
+					<pre><code contenteditable class="java">
+// ALT + C
+menuItem.setMnemonic("C");
+					</code></pre>
+					<h3>accelerators</h3>
+					<pre><code contenteditable class="java">
+// CTRL + C
+menuItem.setAccelerator(
+  KeyStroke.getKeyStroke(
+    KeyEvent.VK_C, ActionEvent.CTRL_MASK));
+					</code></pre>
+
+					<aside class="notes">
+						Att implementera dessa kan se ut såhär.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/demo/demo04.png" alt="" class="plain">
+
+					<pre><code contenteditable class="java">
+// CTRL-G eller ^G
+mniCircle.setAccelerator(
+  KeyStroke.getKeyStroke(
+    KeyEvent.VK_G, ActionEvent.CTRL_MASK));
+
+// CTRL-H eller ^H
+mniSquare.setAccelerator(
+  KeyStroke.getKeyStroke(
+    KeyEvent.VK_H, ActionEvent.CTRL_MASK));
+					</code></pre>
+
+					<aside class="notes">
+						Så i Demo04 har vi använt följande kod. <br>
+						Valde INTE ctrl c / ctrl s. Det finns en poäng med att programmen inte ska göra något oväntat. Användaren ska känna att den har kontroll. Undvik förvirring.
+					</aside>
+				</section>
+
+				<section data-background="#441D2B" class="big">
+					<h1>Popup-menyer</h1>
+					<h3>Högerklicksmeny</h3>
+
+					<aside class="notes">
+						Popup-menyer kan också kallas högerklicksmeny. Den lille rutan som dyker upp när du högerklickar. Anledningen till att vi kallar det för popup-meny är för att et är så det kallas i swing. <br>
+						Kopplas till en grafisk komponent, och triggas vanligtvis med högerklick.
+					</aside>
+				</section>
+
+				<section class="left">
+					<h3><code><a href="http://docs.oracle.com/javase/7/docs/api/javax/swing/JPopupMenu.html">JPopupMenu</a></code></h3>
+					<p>
+						<ul>
+							<li><code>JPopupMenu("title");</code> &mdash; skapa en popup-meny med titeln <code>title</code></li>
+							<li><code>show(c, x, y);</code> &mdash; visa menyn för komponenten <code>c</code> på positioinen <code>(x, y)</code></li>
+						</ul>
+					</p>
+				</section>
+				<section class="left">
+					<p>
+						Popupmeny <code>pmn</code> kopplas till en komponent <code>c</code>:
+						<ul>
+							<li><code>c.add(pmn);</code></li>
+						</ul>
+					</p>
+					<p>
+						Koppla muslyssnare <code>l</code> till komponent <code>c</code>:
+						<ul>
+							<li><code>c.addMouseListener(l);</code></li>
+						</ul>
+					</p>
+					<p>
+						<code>l</code> är en klass, måste implementera <code>MouseListener</code> direkt eller via standardklassen <code>MouseAdapter</code>.
+					</p>
+
+					<aside class="notes">
+						Nu skapat popupmeny, dags att binda den till en komponent. <br>
+						Detta görs med metoden add. För att den här sedan ska kunna triggas, och visas, binder vi en muslyssnare till denna komponent. <br>
+						Muslyssnaren klass, måste använda sig av MouseListener eller arv fr MouseAdapter
+					</aside>
+				</section>
+
+				<section class="left">
+					<h3><code><a href="http://docs.oracle.com/javase/7/docs/api/java/awt/event/MouseEvent.html">MouseEvent</a></code></h3>
+					<p>
+						<ul>
+							<li><code>isMetaDown();</code> &mdash; bool, höger musknapp</li>
+							<li><code>getComponent();</code> &mdash; retunerar komponenten musmarkören är över</li>
+							<li><code>getX();</code> och <code>getY();</code> &mdash; koordinater för musmarkören</li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Ny klass för muslyssnaren, bygger på standardklassen MouseEvent.
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						<img src="img/demo/demo05.png" alt="" class="plain">
+					</p>
+					<pre><code class="java">
+private JPopupMenu pmnEdit = new JPopupMenu("Edit");
+// ...
+drawer.addMouseListener(new PopupHandler());
+// ...
+private class PopupHandler extends MouseAdapter
+{
+  public void mousePressed(MouseEvent e)
+  {
+    if (e.isMetaDown())  // Höger musknappt nedtryckt?
+    {
+      pmnEdit.show(e.getComponent(), e.getX(), e.getY());
+    }
+  }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Mer exempel</h2>
+				</section>
+
+				<section data-background="#441D2B" class="big">
+					<h1>Bortom Swing</h1>
+
+					<aside class="notes">
+						Vad finns mer än Java och Swing?
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						<ul>
+							<li>C#</li>
+							<li>
+								HTML/CSS/JavaScript
+								<ul>
+									<li>Bootstrap</li>
+									<li>Semantic UI</li>
+								</ul>
+							</li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Java + Swing eftersom detta är ett förhållandevis enkelt sätt att göra avancerade gränssnitt. Samma kod i JavaScript + CSS är hur många rader som helst.
+					</aside>
+				</section>
+
+				<section data-background="#441D2B" class="big">
+					<p>
+						Nästa föreläsning: Android
+					</p>
+					<p>
+						<a href="mailto:kontakt@lithehack.se">kontakt@lithehack.se</a>
+					</p>
+					<p>
+						<a href="http://lithehack.se/koma">lithehack.se/koma</a>
+					</p>
+				</section>
+			</div>
 		</div>
+
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
-
 		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: false,
 				progress: true,
@@ -250,13 +507,8 @@ public void actionPerformed(ActionEvent e)
 				center: true,
 				slideNumber: true,
 
-				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+				transition: 'linear',
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -266,8 +518,6 @@ public void actionPerformed(ActionEvent e)
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
-
 		</script>
-
 	</body>
 </html>

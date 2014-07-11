@@ -135,7 +135,7 @@ body {
   color: #cbcbcb;
   border-bottom: 2px dashed #cbcbcb; }
 
-.reveal .left-aligned {
+.reveal section.left {
   text-align: left; }
 
 .reveal section img.plain {
