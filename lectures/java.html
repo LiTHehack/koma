@@ -15,7 +15,15 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- For printing pdf -->
-		<!-- <link rel="stylesheet" type="text/css" href="css/print/pdf.css"> -->
+		<script>
+	  if( window.location.search.match( /print-pdf/gi ) ) {
+	    var link = document.createElement( 'link' );
+	    link.rel = 'stylesheet';
+	    link.type = 'text/css';
+	    link.href = 'css/print/pdf.css';
+	    document.getElementsByTagName( 'head' )[0].appendChild( link );
+	  }
+		</script>
 	</head>
 
 	<body>
@@ -23,7 +31,11 @@
 		<div class="reveal">
 
 			<div class="slides">
-				<section data-background="#441D2B" class="big">
+				<section>
+					<h4>Använd piltangenterna!</h4>
+				</section>
+
+				<section data-background="#441D2B">
 					<h1>Java och Swing</h1>
 
 					<aside class="notes">
@@ -149,7 +161,7 @@ public class MyPanel extends JPanel
 					</aside>
 				</section>
 
-				<section data-background="#441D2B" class="big">
+				<section data-background="#441D2B">
 					<h1>Animering</h1>
 
 					<aside class="notes">
@@ -193,7 +205,7 @@ public void actionPerformed(ActionEvent e)
 }					</code></pre>
 				</section>
 
-				<section data-background="#441D2B" class="big">
+				<section data-background="#441D2B">
 					<h1>Menyer</h1>
 
 					<aside class="notes">
@@ -308,7 +320,7 @@ public Demo03()
 					</code></pre>
 				</section>
 
-				<section data-background="#441D2B" class="big">
+				<section data-background="#441D2B">
 					<h1>Kortkommandon</h1>
 					<p>
 						Aka. <em>Hur du får användaren att känna sig riktigt hemma i ditt program</em>
@@ -371,7 +383,7 @@ mniSquare.setAccelerator(
 					</aside>
 				</section>
 
-				<section data-background="#441D2B" class="big">
+				<section data-background="#441D2B">
 					<h1>Popup-menyer</h1>
 					<h3>Högerklicksmeny</h3>
 
@@ -455,7 +467,7 @@ private class PopupHandler extends MouseAdapter
 					<h2>Mer exempel</h2>
 				</section>
 
-				<section data-background="#441D2B" class="big">
+				<section data-background="#441D2B">
 					<h1>Bortom Swing</h1>
 
 					<aside class="notes">
@@ -482,7 +494,7 @@ private class PopupHandler extends MouseAdapter
 					</aside>
 				</section>
 
-				<section data-background="#441D2B" class="big">
+				<section data-background="#441D2B">
 					<p>
 						Nästa föreläsning: Android
 					</p>
