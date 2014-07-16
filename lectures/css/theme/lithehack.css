@@ -129,9 +129,9 @@ body {
 .reveal .slide-number {
   color: #d01e4e; }
 
-.reveal [data-background="#441D2B"] h1, .reveal [data-background="#441D2B"] h2, .reveal [data-background="#441D2B"] h3, .reveal [data-background="#441D2B"] h4, .reveal [data-background="#441D2B"] h5, .reveal [data-background="#441D2B"] h6, .reveal [data-background="#441D2B"] p {
+.reveal [data-background="#441D2B"] h1, .reveal [data-background="#441D2B"] h2, .reveal [data-background="#441D2B"] h3, .reveal [data-background="#441D2B"] h4, .reveal [data-background="#441D2B"] h5, .reveal [data-background="#441D2B"] h6, .reveal [data-background="#441D2B"] p, .reveal [data-background*=".jpg"] h1, .reveal [data-background*=".jpg"] h2, .reveal [data-background*=".jpg"] h3, .reveal [data-background*=".jpg"] h4, .reveal [data-background*=".jpg"] h5, .reveal [data-background*=".jpg"] h6, .reveal [data-background*=".jpg"] p {
   color: #fff; }
-.reveal [data-background="#441D2B"] a {
+.reveal [data-background="#441D2B"] a, .reveal [data-background*=".jpg"] a {
   color: #cbcbcb;
   border-bottom: 2px dashed #cbcbcb; }
 

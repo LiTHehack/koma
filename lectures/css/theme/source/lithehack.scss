@@ -34,7 +34,7 @@ $mainFontSize: 30px;
 
 // some overrides after theme template import
 
-.reveal [data-background="#441D2B"] {
+.reveal [data-background="#441D2B"], .reveal [data-background*=".jpg"] {
   h1, h2, h3, h4, h5, h6, p {
     color: #fff;
   }
