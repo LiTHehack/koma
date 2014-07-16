@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Android – TNM040</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Reveal basics -->
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/lithehack.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- For printing pdf -->
+		<!-- <link rel="stylesheet" type="text/css" href="css/print/pdf.css"> -->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#441D2B" class="big">
+					<h1>Android</h1>
+
+					<h3>Och mobil utveckling</h3>
+
+					<aside class="notes">
+						Androiiiiid!
+					</aside>
+				</section>
+
+				<section class="left">
+					<h3>Idag</h3>
+					<p>
+						<ul>
+							<li>Responsivitet</li>
+							<li>Android?</li>
+							<li>App-struktur</li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Gå igenom idag. <br>
+						Underlätta för användaren.
+					</aside>
+				</section>
+
+				<section data-background="#441D2B">
+					<h1>Responsivitet</h1>
+					<h3 class="fragment fade-in">
+						<s>Progressive enhancement</s>
+					</h3>
+
+					<aside class="notes">
+						Ganska välanvänt begrepp – kan betyda flera saker. Coolt sedan 2011. <b>En</b> lösning för att lösa problemet att skapa system för flera olika enheter. <br>
+						Vi kommer fokusera på betydelsen att med så enkla medel som möjligt, göra något anpassat för så många enheter som möjligt. <br>
+						Detta kommer vi kika på mer än PE, som snarare fokuserar på att ge användare med hög kapacitet mycket. <br>
+						Problemet med responsivitet är att det kan bli segt för telefoner att över 3G ladda ned samma bild som över bb.
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Android, Augusti 2012</h3>
+					<img src="img/responsive/frag_android_screen_weighted.png" class="plain" alt="">
+					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
+
+					<aside class="notes">
+						Responsivitet är viktigt. Inte minst i Android-världen. <br>
+						Augusti 2012 såg det ut såhär. <br>
+						Illustrerar upplösningarna på olika android-enheter. Många olika alternativ. <br>
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<h3>iOS, Augusti 2012</h3>
+					<img src="img/responsive/frag_iphone_screen.png" class="plain" alt="">
+					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
+				</section>
+
+				<section>
+					<h2>I praktiken</h2>
+				</section>
+
+				<section>
+					<h5>HTML & CSS</h5>
+					<h3>Media queries</h3>
+					<pre><code class="css">
+@media (max-width: 320px) {
+  /* ... massa kod här! */
+}
+					</code></pre>
+					<pre><code class="css">
+@media (min-width: 700px) and (orientation: landscape)	 {
+  /* ... massa kod här! */
+}
+					</code></pre>
+					<p>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries">Mer info!</a>
+					</p>
+
+					<aside class="notes">
+						Styra när din CSS-kod gäller.
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<img src="img/responsive/all.png" alt="" class="plain">
+					<pre><code class="css">@media (max-width: 700px) {
+  .column {
+    clear: both;
+  }
+}</code></pre>
+				</section>
+
+				<section>
+					<h3>Olika verktyg</h3>
+					<p>
+						<ul>
+							<li><a href="http://purecss.io/">Pure</a></li>
+							<li><a href="http://www.getskeleton.com/">Skeleton</a></li>
+							<li><a href="http://getboostrap.com">Bootstrap</a></li>
+							<li><a href="http://www.sitepoint.com/css/foundation/">Foundation</a></li>
+							<li><a href="http://responsive.gs/">Responsive</a></li>
+							<li><a href="http://semantic-ui.com/">Semantic UI</a></li>
+							<li>Osv, osv, osv.</li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Men, ingen ide att uppfinna hjulet på nytt. Finns många bra verktyg, som alla har liknande lösningar på samma system. <br>
+						Välj det som känns bäst!
+					</aside>
+				</section>
+
+				<section data-background="#441D2B">
+					<h1>Android?</h1>
+
+					<aside class="notes">
+						Innan vi snackar om responsivitet i Android så tänker jag att vi ska prata lite om Android i helhet, så att vi alla är på samma plan och så att vi alla snackar om samma sak.
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						<ul>
+							<li>Mobilt operativsystem</li>
+							<li>1 miljard aktiva enheter</li>
+							<li>1 miljon appar, 50 miljarder nedladdningar</li>
+							<li>Java</li>
+							<li>Gratis att komma igång med!</li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Google skött huvudsaklig utveckling sedan 2005. <br>
+						Stort. Världens största. 1 mdr aktiva enheter i juli 2014. <br>
+						Utveckling, spännande siffror. Populär grej. Google Play. <br>
+						Varför inte iOS? Kostar. Android är gratis och nize. Bygger på Java!
+					</aside>
+				</section>
+
+				<section data-background="#441D2B">
+					<h1>App-struktur</h1>
+
+					<aside class="notes">
+						Innan responsivitet också lite om hur en app är upplagd. Det är ett ganska omfattande system, och vi hinner bara skrapa lite på ytan. Men detta i kombination med labben kommer ge er tillräckligt mycket för att komma igång med det. <br>
+						Långt ifrån allt, endast en liten början.
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						<a href="http://developer.android.com/sdk">Android SDK – Software Development Kit</a>
+					</p>
+					<p>
+						<a href="http://developer.android.com/sdk/installing/studio.html">Android Studio</a>
+					</p>
+					<p>
+						<a href="http://developer.android.com/training">developer.android.com/training</a>
+					</p>
+
+					<aside class="notes">
+						Androids appar
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						<ul class="list-unstyled">
+							<li><code>AndroidManifest.xml</code></li>
+							<li>
+								<code>res/</code>
+								<ul>
+									<li><code>layout/</code></li>
+									<li><code>drawable/</code></li>
+									<li><code>values/</code></li>
+								</ul>
+							</li>
+							<li><code>src/</code></li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						En ny, tom, app har ungefär den här strukturen. <br>
+						Det antagligen enklaste sättet att skapa en app på är via Android Studio eller Eclipse med ett Android-tillägg.
+					</aside>
+				</section>
+
+				<section class="left">
+					<h3><code><a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">AndroidManifest.xml</a></code></h3>
+					<p>
+						Styr appen intern och externt.
+					</p>
+
+					<aside class="notes">
+						Fil direkt i roten, alltså högst upp i hiearkin, måste finnas med rätt namn. <br>
+						XML-formatterad, likt html. <br>
+						Styr hur andra appar kan interagera med din app, men också grundläggande saker som hur systemet ska starta din app och vilka tillstånd som behövs. <br>
+						Massa spännande och ospännande, och jättetekniskt, läs!
+					</aside>
+				</section>
+
+				<section class="left">
+					<h3><code><a href="http://developer.android.com/guide/topics/resources/overview.html">res/</a></code></h3>
+					<p>
+						Bilder, ljud, vyer, mm.
+					</p>
+
+					<aside class="notes">
+						Resurser och tillgångar till appen. <br>
+						Allting är ganska separerat i android, vyer är på ett annat ställe än logik. <br>
+						Bryta ut koden så möjligt, skapa överskådliga strukturer och gör allt lättare att hantera. Fixa med en bild utan att härja med kod.
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						<ul class="list-unstyled">
+							<li>
+								<code><a href="http://developer.android.com/guide/topics/resources/providing-resources.html">res/</a></code>
+								<ul>
+									<li>
+										<code><a href="http://developer.android.com/guide/topics/resources/drawable-resource.html">drawable/</a></code>
+										<ul>
+											<li><code>icon.png</code></li>
+											<li><code>selfie.jpg</code></li>
+											<li><code>bird.png</code></li>
+										</ul>
+									</li>
+									<li>
+										<code><a href="http://developer.android.com/guide/topics/resources/layout-resource.html">layout/</a></code>
+										<ul>
+											<li><code>main.xml</code></li>
+											<li><code>info.xml</code></li>
+										</ul>
+									</li>
+									<li>
+										<code>values/</code>
+										<ul>
+											<li><code><a href="http://developer.android.com/guide/topics/resources/string-resource.html">strings.xml</a></code></li>
+											<li><code><a href="http://developer.android.com/guide/topics/resources/style-resource.html">styles.xml</a></code></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Exempel på hiearki. Bilder hör hemma i drawable-mappen, vyer i layout och i values går det att spara saker som textsträngar, stiler osv <br>
+						Inga undermappar, tänk på det. <br>
+						Fler grejer, menu, raw, xml, animator <br>
+						Går att anpassa beroende på telefonen och användarens inställningar.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Qualifiers</h3>
+					<p>
+						<ul class="list-unstyled">
+							<li class="fragment fade-out irrelevant" data-fragment-index="1"><code>drawable/</code></li>
+							<li><code>drawable-hdpi/</code></li>
+							<li><code>drawable-ldpi/</code></li>
+							<li class="fragment fade-out irrelevant" data-fragment-index="1"><code>layout/</code></li>
+							<li><code>layout-<a href="http://developer.android.com/guide/topics/manifest/supports-screens-element.html">sw600dp</a>/</code></li>
+							<li class="fragment fade-out irrelevant" data-fragment-index="1"><code>values/</code></li>
+							<li><code>values-swe</code></li>
+							<li><code>values-fr-rBE</code></li>
+							<li><code>values-en-hdpi</code></li>
+						</ul>
+					</p>
+
+					<aside class="notes">
+						Exempel på hur det kan se ut med flera olika inställningar. <br>
+						values – anpassa tex strängar efter olika länder och platser. Svenska, franska i belgien. <br>
+						Kombinera olika qualifiers. <br>
+						Om ni gör en app enbart för plattor, glöm inte att slänga in detta i manifestet.
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<h4>Dåligt</h4>
+					<p>
+						<img src="img/density-test-bad.png" alt="" class="plain">
+					</p>
+					<h4>Bra!</h4>
+					<p>
+						<img src="img/density-test-good.png" alt="" class="plain">
+					</p>
+
+					<aside class="notes">
+						Exempel bra/dåligt. Förklara diff. Hämtat från guiden.
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						<pre><code class="java">// Ladda in bakgrund för skärmen från en drawable resource
+getWindow().setBackgroundDrawableResource(R.drawable.my_background_image);
+
+// Ladda in vyn main_screen
+setContentView(R.layout.main_screen);</code></pre>
+					</p>
+					<p>
+						<ul>
+							<li><code>drawable/<span class="fragment fade-out irrelevant" data-fragment-index="1">my_background_image.png</span></code></li>
+							<li><code>drawable-ldpi/<span class="fragment fade-out irrelevant" data-fragment-index="1">my_background_image.png</span></code></li>
+							<li><code>drawable-hdpi/<span class="fragment fade-out irrelevant" data-fragment-index="1">my_background_image.png</span></code></li>
+							<li><code>drawable-xhdpi/<span class="fragment fade-out irrelevant" data-fragment-index="1">my_background_image.png</span></code></li>
+							<li style="list-style-type: none;">&nbsp;</li>
+							<li><code>layout/<span class="fragment fade-out irrelevant" data-fragment-index="1">main_screen.xml</span></code></li>
+							<li><code>layout-sw600dp/<span class="fragment fade-out irrelevant" data-fragment-index="1">main_screen.xml</span></code></li>
+						</ul>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+
+				transition: 'linear',
+
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+	</body>
+</html>

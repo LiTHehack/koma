@@ -129,11 +129,14 @@ body {
 .reveal .slide-number {
   color: #d01e4e; }
 
-.reveal [data-background] h1, .reveal [data-background] h2, .reveal [data-background] h3, .reveal [data-background] h4, .reveal [data-background] h5, .reveal [data-background] h6, .reveal [data-background] p {
+.reveal [data-background="#441D2B"] h1, .reveal [data-background="#441D2B"] h2, .reveal [data-background="#441D2B"] h3, .reveal [data-background="#441D2B"] h4, .reveal [data-background="#441D2B"] h5, .reveal [data-background="#441D2B"] h6, .reveal [data-background="#441D2B"] p {
   color: #fff; }
-.reveal [data-background] a {
+.reveal [data-background="#441D2B"] a {
   color: #cbcbcb;
   border-bottom: 2px dashed #cbcbcb; }
+
+.reveal h1 code, .reveal h2 code, .reveal h3 code, .reveal h4 code, .reveal h5 code, .reveal h6 code {
+  letter-spacing: 0; }
 
 .reveal section.left {
   text-align: left; }
@@ -144,3 +147,8 @@ body {
 
 .reveal .slides section .fragment.irrelevant.current-fragment {
   opacity: .4; }
+
+.reveal ul.list-unstyled {
+  list-style: none; }
+  .reveal ul.list-unstyled ul {
+    list-style: none; }

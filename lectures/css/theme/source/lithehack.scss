@@ -34,13 +34,21 @@ $mainFontSize: 30px;
 
 // some overrides after theme template import
 
-.reveal [data-background] {
+.reveal [data-background="#441D2B"] {
   h1, h2, h3, h4, h5, h6, p {
     color: #fff;
   }
   a {
     color: #cbcbcb;
     border-bottom: 2px dashed #cbcbcb;
+  }
+}
+
+.reveal {
+  h1, h2, h3, h4, h5, h6 {
+    code {
+      letter-spacing: 0;
+    }
   }
 }
 
@@ -55,4 +63,11 @@ $mainFontSize: 30px;
 
 .reveal .slides section .fragment.irrelevant.current-fragment {
   opacity: .4;
+}
+
+.reveal ul.list-unstyled {
+  list-style: none;
+  ul {
+    list-style: none;
+  }
 }
