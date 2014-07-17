@@ -30,7 +30,7 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<section>
+				<section class="noprint">
 					<h4>Använd piltangenterna!</h4>
 				</section>
 
@@ -118,7 +118,7 @@
 					</aside>
 				</section>
 
-				<section data-background="#fff">
+				<section>
 					<img src="img/responsive/all.png" alt="" class="plain">
 					<pre><code class="css">@media (max-width: 700px) {
   .column {
@@ -296,7 +296,7 @@
 				</section>
 
 				<section>
-					<h3>Qualifiers</h3>
+					<h4>Qualifiers</h4>
 					<p>
 						<ul class="list-unstyled">
 							<li class="fragment fade-out irrelevant" data-fragment-index="1"><code>drawable/</code></li>
@@ -373,14 +373,62 @@ setContentView(R.layout.main_screen);</code></pre>
 									<li><code>AdapterView</code></li>
 								</ul>
 							</li>
+							<li>Responsivt</li>
 						</ul>
 					</p>
 
 					<aside class="notes">
 						I layoutmappen finns de filer som styr de olika vyerna och användargränssnitten för en app. <br>
 						Den kan skrivas antingen i XML (fokus för oss) eller under runtime. (Poängen är att separera.) Ganska likt HTML och JavaScript <br>
-						Också via grafiskt gränssnitt. Labben grafiskt och xml.
+						Också via grafiskt gränssnitt. Labben grafiskt och xml. <br>
+						Responsivt! Gjort för att fylla ut, tex
 					</aside>
+				</section>
+
+				<section>
+					<h5><code>activity_my.xml</code></h5>
+					<pre><code class="xml">&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="@dimen/activity_common_margin"
+  tools:context=".MyActivity">
+
+  &lt;TextView
+    android:text="@string/hello_world"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+&lt;/RelativeLayout>
+</code></pre>
+					<h5><code>MyActivity.java</code></h5>
+					<pre><code class="">// Importer osv.
+public class MyActivity extends Activity {
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_my);
+  }
+  // ...
+</code></pre>
+					<h5><code>strings.xml</code></h5>
+					<pre><code class="xml">&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;resources>
+  &lt;string name="hello_world">Hello world!&lt;/string>
+&lt;/resources>
+</code></pre>
+					<aside class="notes">
+						Berätta att det är Android-xml, typ. <br>
+						Lite inställningar, hämta grej från values-fil <br>
+						Visa text <br>
+						Importera lite olika Androidpaket osv, som vanligt i Java <br>
+						onCreate körs direkt, @overide berättar saker för programmet du jobbar i, varnar om du stavar fel osv.
+					</aside>
+				</section>
+
+				<section>
+					<h5>Labben</h5>
+					<h2>To Do-lista</h2>
 				</section>
 
 			</div>

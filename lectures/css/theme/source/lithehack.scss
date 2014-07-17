@@ -59,6 +59,7 @@ $mainFontSize: 30px;
 .reveal section img.plain {
   border: none;
   box-shadow: none;
+  background: none;
 }
 
 .reveal .slides section .fragment.irrelevant.current-fragment {
@@ -69,5 +70,11 @@ $mainFontSize: 30px;
   list-style: none;
   ul {
     list-style: none;
+  }
+}
+
+@media print {
+  .noprint, .noprint * {
+    display: none !important;
   }
 }
