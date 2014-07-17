@@ -1,0 +1,1 @@
+Button button = (Button)findViewById(R.id.add);

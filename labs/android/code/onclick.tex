@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{button}\PY{o}{.}\PY{n+na}{setOnClickListener}\PY{o}{(}\PY{k}{new} \PY{n}{View}\PY{o}{.}\PY{n+na}{OnClickListener}\PY{o}{(}\PY{o}{)} \PY{o}{\PYZob{}}
+    \PY{n+nd}{@Override}
+    \PY{k+kd}{public} \PY{k+kt}{void} \PY{n+nf}{onClick}\PY{o}{(}\PY{n}{View} \PY{n}{v}\PY{o}{)} \PY{o}{\PYZob{}}
+        \PY{k}{if}\PY{o}{(}\PY{n}{v}\PY{o}{.}\PY{n+na}{getId}\PY{o}{(}\PY{o}{)} \PY{o}{=}\PY{o}{=} \PY{n}{R}\PY{o}{.}\PY{n+na}{id}\PY{o}{.}\PY{n+na}{button1}\PY{o}{)}\PY{o}{\PYZob{}}
+            \PY{n}{EditText} \PY{n}{eText} \PY{o}{=} \PY{o}{(}\PY{n}{EditText}\PY{o}{)}\PY{n}{findViewById}\PY{o}{(}\PY{n}{R}\PY{o}{.}\PY{n+na}{id}\PY{o}{.}\PY{n+na}{editText1}\PY{o}{)}\PY{o}{;}
+            \PY{n}{String} \PY{n}{text} \PY{o}{=} \PY{n}{eText}\PY{o}{.}\PY{n+na}{getText}\PY{o}{(}\PY{o}{)}\PY{o}{.}\PY{n+na}{toString}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+            \PY{k}{if} \PY{o}{(}\PY{n}{text}\PY{o}{.}\PY{n+na}{length}\PY{o}{(}\PY{o}{)} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{o}{)} \PY{o}{\PYZob{}}
+                \PY{n}{Todo} \PY{n}{todo} \PY{o}{=} \PY{n}{datasource}\PY{o}{.}\PY{n+na}{createTodo}\PY{o}{(}\PY{n}{text}\PY{o}{)}\PY{o}{;}
+           	    \PY{n}{adapter}\PY{o}{.}\PY{n+na}{add}\PY{o}{(}\PY{n}{todo}\PY{o}{)}\PY{o}{;}
+           	    \PY{n}{eText}\PY{o}{.}\PY{n+na}{setText}\PY{o}{(}\PY{l+s}{\PYZdq{}\PYZdq{}}\PY{o}{)}\PY{o}{;}
+            \PY{o}{\PYZcb{}}
+        \PY{o}{\PYZcb{}}
+    \PY{o}{\PYZcb{}}
+\PY{o}{\PYZcb{}}\PY{o}{)}\PY{o}{;}
+\end{Verbatim}
