@@ -48,46 +48,64 @@
 \maketitle
 
 \section{Syfte}
-Denna laboration är en introduktion till Androidprogrammering för att ni ska ha möjlighet att göra en mobilapp som projekt. 
+Denna laboration är en introduktion till Androidprogrammering för att ni ska ha möjlighet att göra en mobilapp som projekt.
 Ni kommer även att få en introduktion till hur man använder enklaste möjliga databas tillsammans med Android, det möjliggör applikationer med mer avancerade data.
 \section{Inledning}
-Uppgiften är att göra en “Att göra lista” med möjlighet att lägga till och ta bort uppgifter.
+Uppgiften är att göra en “Att göra-lista” med möjlighet att lägga till och ta bort uppgifter.
 \section{Installation}
-För att installera Android SDK gå in på \href{http://developer.android.com/sdk/index.html}{http://developer.android.com/sdk/index.html} och välj “Download the SDK, ADT Bundle for Windows”. Utvecklingsmiljön är en färdigkonfigurerad version av Eclipse och finns till Windows, Linux och Mac.\\
+För att installera Android Studio gå in på \href{http://developer.android.com/sdk/installing/studio.html}{http://developer.android.com/sdk/installing/studio.html} och välj “Download Android Studio Beta with the Android SDK”. Utvecklingsmiljön är en färdigkonfigurerad version av IntelliJ IDEA och finns till Windows, Linux och Mac.\\
 
-Packa upp zip-filen till D: och öppna Eclipse från “adt-bundle-win-x86\_64-yyyymmdd/eclipse/eclipse.exe”. 
-Första gången du öppnar Eclipse kommer den fråga var du vill placera dess workspaces. 
+Packa upp zip-filen till D: och öppna Android Studio från från “bin/filnamn.exe”.
+Första gången du öppnar Android Studio kommer den fråga var du vill placera dess workspaces.
 Vi föreslår att du väljer en mapp som finns på “privat\_stuff”, vi kommer att använda “H:/Workspace”.
 
+%
+%
+%
+%
+%
+%
+%
+% FIXME – instruktioner för att komma igång
+%
+%
+%
+%
+%
+%
+%
+
 \subsection{Skapa en Androidemulator}
-För att kunna köra en Androidapplikation behövs en Androidenhet. 
-Eftersom vi inte utgår från att alla har en Androidtelefon/-platta föreslår vi att installera en Androidemulator. 
-“Window -> Android Virtual Device Manager”, välj sedan “New...”.
+För att kunna köra en Androidapplikation behövs en Androidenhet.
+Eftersom vi inte utgår från att alla har en Androidtelefon/-platta föreslår vi att installera en Androidemulator.
+“Tools -> Android -> Android Virtual Device Manager / AVD Manager”, välj sedan “Create...”.
 \\
 AVD Name: MyDevice\\
-Device:  Nexus 7\\
-Target:  Android 4.3 - API Level 18\\
+Device:  Nexus 5\\
+Target:  Android 4.4 - API Level 19\\
 Emulating Options:  Use host GPU\\
 Lämna resten som default.\\
 
 \subsection{Skapa Projektet}
-Nu har du startat Eclipse samt skapat en enhet. 
+Nu har du startat Eclipse samt skapat en enhet.
 Nu är det dags för det roliga, koda!
 \\
-Välj “File -> New -> Android Application Project”\\ 
+Välj “File -> New -> Android Application Project” och följ instruktionerna. Fyll i inställningarna så att de ser ut som följer:\\
 Application Name:  MyToDoList\\
-Minimum Required SDK:  API 11: Android 3.0 (Honeycomb)\\
+Kryssa i ``Phone \& Tablet'' och välj \\
+Minimum Required SDK:  API 15: Android 4.0.3 (IceCreamSandwich) \\
+Välj sedan att du vill ha en ``Blank Activity'', och ge den namnet ``MainActivity''.\\
 \\
-Fortsätt genom att använda defaultinställningarna på resten av valen och avsluta med “Finish”. 
+Fortsätt genom att använda defaultinställningarna på resten av valen och avsluta med “Finish”.
 %Nu kan ditt fönster fortfarande ha en välkomstmeny till Android SDK. Avsluta den med krysset som är uppe i vänstra hörnet i den inre ramen.
 
-Kör din Androidapplikation genom att trycka på “Play” knappen i menyn eller Ctrl+F11. 
-Notera att Androidemulatorn tar några minuter att starta första gången. 
+Kör din Androidapplikation genom att trycka på “Play” knappen i menyn eller Ctrl+F11, och kryssa sedan i ``Launch emulator'' och välj ``MyDevice'' som du skapade tidigare.
+Notera att Androidemulatorn tar några minuter att starta första gången.
 Stäng inte av emulatorn med krysset mellan körningar för då tar det lång tid att starta varje gång.
 
 \section{Todo-app}
-Vi kommer inte att gå in på djupet i hur Android fungerar. 
-De som arbetat med iOS tidigare kommer att märka att det skiljer sig en hel del och att t.ex vyer hanteras annorlunda. 
+Vi kommer inte i det här kompendiet att gå in på djupet i hur Android fungerar.
+De som arbetat med iOS tidigare kommer att märka att det skiljer sig en hel del och att till exempel vyer hanteras annorlunda.
 Fokus på labben kommer vara att arbeta i Java och nödvändiga Androidspecifika komponenter kommer att beskrivas nedan.
 \begin{figure}[ht!]
 \centering
@@ -98,41 +116,53 @@ Fokus på labben kommer vara att arbeta i Java och nödvändiga Androidspecifika
 \subsection{Debug prints}
 För den som är van att arbeta med textbaserade program är det vanligt att göra “debug prints” för att kontrollera att värden i variabler är korrekt samt se att funktioner blivit anropade etc.
 
-Öppna först Android logcat genom “\textit{Window -> Show View -> Other..}”, Välj “\textit{Android -> LogCat}”.\\
+Android Logcat, där loggarna du gör syns, ska starta samtidigt som du startar din emulerade telefon.
 En utskrift i LogCat görs genom att först ge ett meddelande en tagg som identifierar dess typ. Exempelvis “databas”, “info” eller “debug”. Vi kommer använda taggen “TodoLog”. När LogCat är öppnad behöver vi skapa ett filter, för Android kommer att spotta ut väldigt mycket meddelanden och vi är just nu enbart intresserade av “TodoLog”.\\
 \\
-Tryck på det gröna plusset.\\
+Klicka på rullgardinsmenyn till höger där det står något i stil med ``app: com.example.lithehack.mytodolist'', och välj sedan ``Edit FIlter Configuration''. Tryck sedan på plus-tecknet i fönstret som dyker upp. Ge ditt filter ett lämpligt namn, och i rutan ``by Log Tag (regex)'' skriver du sedan ``TodoLog''. Klicka på OK, och i samma rullgardinsmeny som tidigare, välj ditt nyskapade filter.\\
 
-Välj ett namn för ditt filter och välj “by Log Tag” där ni fyller i det namn på taggen ni vill filtrera efter.\\ \\
 Testa att det fungerar genom att logga i funktionen onCreate.
 \input{code/log}
 
 \subsection{Visa en lista}
-För att kunna skapa en lista med saker att göra är det lämpligt att först skapa den grafiska layouten för listan. Det grafiska gränssnittet ligger i filen “\textit{res -> layout -> activity\_main.xml}”.\\
-I Eclipse så kan du enkelt navigera till filen i “Package Explorer”. Dubbelklicka för att öppna den.\\
+För att kunna skapa en lista med saker att göra är det lämpligt att först skapa den grafiska layouten för listan. Det grafiska gränssnittet ligger i filen “\textit{res / layout / activity\_main.xml}”.\\
+Filen bör ha öppnats när du skapade ditt nya projekt. Om den inte gjorde det, leta upp den i ``Project''-vyn och dubbelklicka på den. \\
 
-Nu bör du få upp hur det grafiska gränssnittet ser ut i en mobiltelefon/surfplatta. Här kan du direkt redigera gränssnittet genom att dra in olika element ifrån “Palette” eller redigera XML-koden genom att byta ifrån “Graphical layout” till “activity\_main.xml” i nedre delen av fönstret. Du behöver inte välja antingen eller, men det är bra att ha koll på båda.\\
+Antingen får du nu upp det grafiska gränssnittet för att redigera en vy, eller så får du upp det text-baserade gränssnittet.
+Oavsett vilket är det gott så, det finns en god poäng med att vara bekant med båda.
+För att växla mellan de två vyerna kan du byta flik strax under och till vänster om telefonen som syns.
+Alternativen som finns där är ``Design'' och ``Text''.
+I det som kallas ``Design'' kan du direkt redigera gränssnittet genom att dra in olika element ifrån “Palette” och i det som kallas ``Text'' redigera XML-koden.\\
 
-Textfältet “Hello World!” kan du bara ta bort genom att antingen markera det direkt eller markera det i listan “Outline” till höger, och trycka på delete.\\ 
+Textfältet “Hello World!” kan du bara ta bort genom att antingen markera det direkt eller markera det i listan “Component Tree” till höger, och trycka på delete.\\
 
-Skapa en lista genom att dra in elementet “\textit{Composite -> ListView}”. För att våran aktivitet i appen ska kunna nå listan så måste den få ett lite annorlunda “id” än vad den har nu. I “\textit{Properties}” finns det ett fält som heter “Id”. Ändra innehållet i det till “\textit{@android:id/list}”. Detta är lite speciellt när det kommer till just en lista och vi kommer senare att behandla id på ett mer konventionellt sätt när det kommer till knappar och textfält.\\
+Skapa en lista genom att dra in elementet “\textit{Container -> ListView}”.
+För att våran aktivitet i appen ska kunna nå listan så måste den få ett lite annorlunda “id” än vad den har nu.
+I “\textit{Properties}” finns det ett fält som heter “Id”.
+Ändra innehållet i det till “\textit{@android:id/list}”.
+Detta är lite speciellt när det kommer till just en lista och vi kommer senare att behandla id på ett mer konventionellt sätt när det kommer till knappar och textfält.\\
 
 Nu kan du återgå till koden i filen \textit{MainActivity.java}, som innehåller källkoden för huvudaktiviteten i din app.
 Då vi har valt att skapa en lista i vår Activity, så gör vi bäst i att ärva från ListActivity istället för Activity i vår klass.
 Ändra så att MainActivity ärver ifrån ListActivity istället för Activity. \\
 
-Eclipse vet inte automatiskt vad en ListActivity är och markerar detta som ett fel i koden. Importera klassen genom att klicka på det rödmarkerade ListActivity och välj “Import ‘ListActivity’ (android.app)”. Eclipse har även ett snabbkommando, \textit{ctrl+shift+o}, för att hantera vad som behöver importeras.\\
+Android Studio vet inte automatiskt vad en ListActivity är och markerar detta som ett fel i koden.
+Importera klassen genom att klicka på den röda lampan som dyker upp då du ändrar detta och välj “Import class”.
+Du kan också ställa markören i det rödmarkerade ListActivity och trycka Alt+Enter för att få upp denna meny. \\ % FIXME – stämmer detta på windows?
 
 För att göra en enkel lista att testa ditt grafiska gränsnitt med, så behövs det lite data att visa.
-Ge din klass en privat datamedlem som är en String ArrayList och döp den till testData. ArrayList är i syntaxen ganska lik Vector, som du nog är bekant med sedan tidigare.
+Ge din klass en privat datamedlem som är en String ArrayList och döp den till \textit{testData}.
+ArrayList är i syntaxen ganska lik Vector, som du nog är bekant med sedan tidigare.
 Deklarera även en privat datamedlem av klassen ArrayAdapter som tar typen String och döp den till \textit{adapter}.\\
 
-
-I metoden onCreate, som anropas direkt efter appen har startats, kan du instansiera din String ArrayList med lite testdata. Här gör du som du vill, ett sätt är bara loopa igenom arrayen och lägga in en siffra eller textsnutt för varje index.\\
+I metoden onCreate, som anropas direkt efter appen har startats, kan du instansiera din String ArrayList med lite testdata.
+Här gör du som du vill, ett sätt är bara loopa igenom arrayen och lägga in en siffra eller textsnutt för varje index.\\
 
 Nu måste vi koppla denna data till vårt grafiska gränssnitt. Detta är inte helt intuitivt till en början, så ni får lite hjälp med det:
 \input{code/arrayadapter}
-Det som sker här är att vi skapar en s.k ArrayAdapter som kopplar ihop datan som är lagrad i \textit{testData} med det grafiska gränsnittet. Vi anger vilken datatyp det är (String) och var datan är lagrad (testData). Tillslut tilldelar vi adaptern till aktiviteten via \textit{setListAdapter}.\\
+Det som sker här är att vi skapar en s.k ArrayAdapter som kopplar ihop datan som är lagrad i \textit{testData} med det grafiska gränsnittet.
+Vi anger vilken datatyp det är (String) och var datan är lagrad (testData).
+Tillslut tilldelar vi adaptern till aktiviteten via \textit{setListAdapter}.\\
 
 Om allt har gått rätt till så bör nu appen kunna startas genom att trycka på Run. Appen bör startas i Android emulatorn. En lista, som förvisso är rätt tråkig och statisk, bör nu visas!\\ \\
 
@@ -145,31 +175,41 @@ Om allt har gått rätt till så bör nu appen kunna startas genom att trycka p�
 	}
 }
 \subsection{Interagera (click event) med en lista}
-Nu är det dags att få igång interaktionen med listan. Eftersom vår \textit{MainActivity} ärver av \textit{ListActivity}, så är det ganska enkelt att komma igång med.\\
+Nu är det dags att få igång interaktionen med listan.
+Eftersom vår \textit{MainActivity} ärver av \textit{ListActivity}, så är det ganska enkelt att komma igång med.\\
 
-För att skapa en event listener som lyssnar på interaktioner med listan ska vi överlagra metoden \textit{onListItemClick} från \textit{ListActivity}. Här kan vi använda Eclipse för att generera en metodsignatur. Ställ markören någonstans i klassen \textit{MainActivity} (men inte i någon metod), börja skriva \textit{“onListItemClick”} och tryck ctrl+space. Eclipse föreslår då att infoga en överlagrad variant av \textit{onListItemClick} från \textit{ListActivity} med alla funktionsparametrar som behövs.\\
+För att skapa en event listener som lyssnar på interaktioner med listan ska vi överlagra metoden \textit{onListItemClick} från \textit{ListActivity}.
+Här kan vi använda Android Studio för att generera en metodsignatur.
+Ställ markören någonstans i klassen \textit{MainActivity} (men inte i någon metod), börja skriva \textit{“onListItemClick”} och tryck ctrl+space.
+Android Studio föreslår då att infoga en överlagrad variant av \textit{onListItemClick} från \textit{ListActivity} med alla funktionsparametrar som behövs.\\
 
-OBS! Notera att du behöver ändra så att de två sista argumenten är konstanta, dvs \textit{final int} respektive \textit{final long}. Detta behövs senare för att ha tillgång till dem i en lyssnare.\\
+OBS! Notera att du behöver ändra så att de två sista argumenten är konstanta, dvs \textit{final int} respektive \textit{final long}.
+Detta behövs senare för att ha tillgång till dem i en lyssnare.\\
 
-Inne i metoden kan vi nu bestämma vad som ska hända när en användare klickar på en rad i listan. Enklast just nu är förstås att bara logga till LogCat.\\
+Inne i metoden kan vi nu bestämma vad som ska hända när en användare klickar på en rad i listan.
+Enklast just nu är förstås att bara logga till LogCat.\\
 
 När du nu kör din app igen, så bör LogCat visa din text när man trycker på en post i listan.\\ \\
 \fbox{
   \parbox{\textwidth}{
-	\textbf{Uppgift:} Implentera onListItemClick och skriv ut någon text genom LogCat för att se att interaktionen med listan funkar korrekt. 
+	\textbf{Uppgift:} Implentera onListItemClick och skriv ut någon text genom LogCat för att se att interaktionen med listan funkar korrekt.
 	}
 }
+
 \subsection{Visa en popup}
 Nu när vi vet att det funkar att klicka på en post i listan, så kanske det kan vara roligare att få upp ett meddelande i appen istället för LogCat.\\
 
-Tidigare såg vi att man enkelt kunde utforma sitt grafiska gränssnitt med den grafiska editorn. Det kan man använda för mer eller mindre allt grafiskt arbete, men när det kommer till enklare saker som tex dialogrutor kan det vara lämpligt att skriva de direkt i koden.\\
+Tidigare såg vi att man enkelt kunde utforma sitt grafiska gränssnitt med den grafiska editorn.
+Det kan man använda för mer eller mindre allt grafiskt arbete, men när det kommer till enklare saker som tex dialogrutor kan det vara lämpligt att skriva de direkt i koden.\\
 
-För att göra detta använder vi oss av en \textit{Builder} till komponenten \textit{AlertDialog}. \textit{AlertDialog} visar en popup-dialog anpassad för saker som att bekräfta en återgärd eller visa information om en post.
+För att göra detta använder vi oss av en \textit{Builder} till komponenten \textit{AlertDialog}.
+\textit{AlertDialog} visar en popup-dialog anpassad för saker som att bekräfta en återgärd eller visa information om en post.
 
 \input{code/alertdialogbuilder}
-Vi kan nu lägga till saker i våran builder. Anropa metoden setMessage med en sträng som argument för att sätta ett textmeddelande som dyker upp när man klickar på en post.\\
+Vi kan nu lägga till saker i våran builder.
+Anropa metoden setMessage med en sträng som argument för att sätta ett textmeddelande som dyker upp när man klickar på en post.\\
 
-Vi har ännu inte skapat våran \textit{AlertDialog}, men det gör vi nu genom att anropa 
+Vi har ännu inte skapat våran \textit{AlertDialog}, men det gör vi nu genom att anropa
 \input{code/alertdialogcreate}
 Vi kan visa dialogrutan genom \textit{dialog.show();}\\
 
@@ -181,15 +221,18 @@ Kör appen och se hur du nu får en popup ruta med texten när du klickar på en
 }
 
 \section{Ta bort poster}
-Låt oss nu försöka lägga till funktionalitet för att kunna ta bort en post ifrån listan. 
-Metoderna \textit{setPositiveButton} och \textit{setNegativeButton} på builder-objektet ger tillgång till två knappar som man kan styra hur man vill. Båda två metoderna tar två argument; en sträng för texten på knappen och en \textit{OnClickListener}.
-Här kan du antingen anropa en lyssnare som du skapat någon annanstans, eller helt enkelt skapa den direkt i metodanropet genom 
+Låt oss nu försöka lägga till funktionalitet för att kunna ta bort en post ifrån listan.
+Metoderna \textit{setPositiveButton} och \textit{setNegativeButton} på builder-objektet ger tillgång till två knappar som man kan styra hur man vill.
+Båda två metoderna tar två argument; en sträng för texten på knappen och en \textit{OnClickListener}.
+Här kan du antingen anropa en lyssnare som du skapat någon annanstans, eller helt enkelt skapa den direkt i metodanropet genom
 \input{code/newonclick}
 
 Inuti denna lyssnare så måste metoden \textit{onClick(DialogInterface, int)} finnas. Det är alltså här inne som funktionaliteten för att kunna ta bort en post ifrån listan skall implementeras.\\
 
-För att ta bort en post ifrån listan så behöver du anropa metoden \textit{remove} på \textit{adapter}. remove tar i det här fallet ett objekt av typen String som argument, då ArrayAdapter:n har blivit deklarerad för att hantera just String. Här vill du nu plocka bort den aktuella posten i listan genom att hitta den i testData.
-I argumenten för \textit{onListItemClick} så finns den aktuella postens index i konstanten \textit{id}.\\  
+För att ta bort en post ifrån listan så behöver du anropa metoden \textit{remove} på \textit{adapter}.
+remove tar i det här fallet ett objekt av typen String som argument, då ArrayAdapter:n har blivit deklarerad för att hantera just String.
+Här vill du nu plocka bort den aktuella posten i listan genom att hitta den i testData.
+I argumenten för \textit{onListItemClick} så finns den aktuella postens index i konstanten \textit{id}.\\ % FIXME - är det verkligen i ID? Inte position?
 Om du gjort rätt så kommer posten tas bort från både testData och adapter, vilket kommer resultera i att listan i det grafiska gränssnittet uppdateras korrekt.\\
 
 Knappen för “Ok” behöver inte göra någonting, så hela onClick-metoden kan bara vara tom.\\
@@ -204,7 +247,7 @@ Knappen för “Ok” behöver inte göra någonting, så hela onClick-metoden k
 
 \label{overflow}
 
-\end{figure} 
+\end{figure}
 
 \fbox{
   \parbox{\textwidth}{
@@ -213,18 +256,39 @@ Knappen för “Ok” behöver inte göra någonting, så hela onClick-metoden k
 }
 
 \subsection{Knappar och textfält}
-Det hade naturligtvis varit trevligt med möjligheten att lägga till nya poster i listan. För att göra det behöver vi en knapp för att lägga till, och ett textfält för att skriva in namnet.\\
+Det hade naturligtvis varit trevligt med möjligheten att lägga till nya poster i listan.
+För att göra det behöver vi en knapp för att lägga till, och ett textfält för att skriva in namnet.\\
 
-Gå tillbaka till ditt grafiska gränssnitt (\textit{activity\_main.xml}). För att göra en smidig layout så behöver vi först ändra lite. I \textit{Outline}, högerklicka på \textit{RelativeLayout} och välj \textit{Change layout...}. Välj sedan \textit{LinearLayout(vertical)}. Inuti denna \textit{LinearLayout} så finns du din lista. Skapa ytterligare en \textit{LinearLayout}, men en som är horizontal. Lägg den inuti den första \textit{LinearLayout(vertical)}. Titta i \textit{Outline} så att din nya \textit{LinearLayout(horizontal)} ligger inuti den andra \textit{LinearLayout}, och ovanför listan.\\
-
-Lägg nu till en knapp(\textit{Form Widgets -> Button}) och ett textfält (\textit{Text Fields -> Plain Text}) så de hamnar i din \textit{LinearLayout(horizontal)}. Ge dem ett lämpligt \textit{id} i \textit{Properties}, tex "add" för knappen och "name" för textfältet. Kom ihåg att det måste vara på formen \textit{@+id/ditt-namn-här}.\\
+Gå tillbaka till ditt grafiska gränssnitt (\textit{activity\_main.xml}).\\
+Lägg nu till ett textfält (``Text Fields -> Plain Text'') genom att dra och släppa. Lägg det så att två textrutor dyker upp där det står ``alignParentLeft'' och ``alignParentTop''.
+Lägg sedan till en knapp (``Widgets -> Button'').
+Placera knappen så att liknande rutor dyker upp, som säger ``alignParentTop'' och ``alignParentRight''.
+Justera nu storlekarna på både textfältet och knappen, så att textfältet får rutan ``toLeftOf=button0'' eller motsvarande, och knappen ``above=@android:id/list''.
+Till sist, justera storleken på listan så att rutan ``below=editText0'' eller liknande dyker upp.\\
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{images/outline.png}
-\caption{Outline med alla elementen inlagda.}
+\includegraphics[width=90mm]{images/editing_layout.png}
+\caption{Rutor som dyker upp då ``views'' flyttas och ändrar storlek.}
 \label{overflow}
-\end{figure} 
+\end{figure}
+
+Nu har vi skapat en layout där objektens storlek och position är beroende av varandra.
+Detta är givetvis inget krav, men skapar tydliga linjer i gränssnittet, vilket får det att se mindre rörigt ut.
+Ge dem ett lämpligt \textit{id} i \textit{Properties}, tex ``add'' för knappen och ``name'' för textfältet. Detta är oftast enklast att ändra i ``text''-läget.
+Kom ihåg att det måste vara på formen \textit{@+id/ditt-namn-här}.\\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{images/layout.png}
+\caption{Elementen positions- och storleksberoenden.}
+\label{overflow}
+\end{figure}
+
+För att göra det lite lättare för användaren att hitta textfältet kan det vara bra att lägga till en så kallan \textit{hint}.
+Gör det genom att markera textrutan i den grafiska editorn, och leta sedan upp fältet ``hint'' i ``properties''-panelen.
+Skriv något lämpligt!
+Ändra texten i knappen på liknande sätt, genom att förändra fältet ``text''. \\
 
 Om du testkör din app nu, så bör du se både knappen och textfältet som det ser ut när du designar ditt grafiska gränssnitt, men de gör inget än så låt oss fixa det. \\
 
