@@ -44,7 +44,7 @@
 
 
 \title{Kommunikation och Användargränssnitt - Androidutveckling}
-\author{Andreas Valter \and Fredrik Lindner \and  \and Karl-Johan Krantz \and Jonas Strandstedt \and Jonas Zeitler }
+\author{Andreas Valter \and Fredrik Lindner \and Karl-Johan Krantz \and Jonas Strandstedt \and Jonas Zeitler \and Klas Eskilson}
 \maketitle
 
 \section{Syfte}
@@ -298,7 +298,8 @@ Nu kan vi anropa metoden \textit{setOnClickListener} på \textit{button}. Som ti
 \input{code/buttonlistener}
 
 Som tidigare behövs en överlagrad metod \textit{onClick(View)} i lyssnaren (av typen \textit{public void}). Innan vi kan definera vad knappen ska göra när användaren trycker på den, så måste vi identifiera att användaren har tryckt just på våran knapp.
-I \textit{onClick} så har vi fått med en View som har den tillhörande metoden \textit{getId()} för att hämta id på det elementet som har aktivierats. Se till så att det överensstämmer med id på våran knapp genom att jämföra med \textit{R.id.add} (dvs, om knappen är döpt till "add").\\
+I \textit{onClick} så har vi fått med en View som har den tillhörande metoden \textit{getId()} för att hämta id på det elementet som har aktivierats.
+Se till så att det överensstämmer med id på våran knapp genom att jämföra med \textit{R.id.add} (dvs, om knappen är döpt till ``add'').\\
 
 Nu måste vi hämta ut informationen som är inskrivet i textfältet! På samma sätt som knappen skapades ovan så kan vi skapa ett textfält, som är av typen \textit{EditText} istället för \textit{Button}.
 Metoden \textit{getText()} hämtar ut text från ett textfält, dock är det inte av typen String. Fixa det!\\
@@ -309,10 +310,15 @@ Sen är det bara att lägga in texten i form av en String i \textit{adapter}. De
 	\textbf{Uppgift:} Skapa en knapp och ett textfält. När man trycker på knappen skall texten som är i textfältet läggas till i listan.
 	}
 }
-\section{Databaskoppling}
-Hittills har vi endast lagrat data i en ArrayList. Den tas naturligtvis bort så fort programmet stängs ned. Ett smidigare sätt att lagra data för en Todo-lista är att lagra allt i en liten SQL databas. All kod för att skapa en databas och lagra en egen klass i den är redan skriven, och finns i filerna \textit{MySQLiteHelper.java}, \textit{TodosDataSource.java} och \textit{Todo.java}.\\
+\section{Databaskoppling – varmt rekommenderad extrauppgift}
+Hittills har vi endast lagrat data i en ArrayList.
+Den tas naturligtvis bort så fort programmet stängs ned.
+Ett smidigare sätt att lagra data för en Todo-lista är att lagra allt i en liten SQL databas.
+All kod för att skapa en databas och lagra en egen klass i den är redan skriven, och finns i filerna \textit{MySQLiteHelper.java}, \textit{TodosDataSource.java} och \textit{Todo.java}.\\
 
-Här är ett bra ställe att klippa navelsträngen, nedan ges bara de metoderna som kan vara användbara för att få det att funka med databasen. Allt är redan färdigt i de filerna som skickas med så inget behöver ändras där, men läs igenom dem för att förstå hur det hänger ihop. Försök komma så långt ni kan!\\ \\
+Här är ett bra ställe att klippa navelsträngen, nedan ges bara de metoderna som kan vara användbara för att få det att funka med databasen.
+Allt är redan färdigt i de filerna som skickas med så inget behöver ändras där, men läs igenom dem för att förstå hur det hänger ihop.
+Försök komma så långt ni kan!\\ \\
 
 Datamedlemmar: ArrayList av typen \textit{Todo}, ArrayAdapter av typen \textit{Todo}, TodosDataSource \\
 TodosDataSource metoder: open(), getAllTodos(), createTodo(), deleteTodo() \\
