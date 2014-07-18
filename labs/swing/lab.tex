@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+\pdfoutput=1
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage{units}
+\usepackage{icomma}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{multicol,caption}
+\usepackage{bbm}
+\usepackage{hyperref}
+\usepackage{xfrac}
+\newcommand{\N}{\ensuremath{\mathbbm{N}}}
+\newcommand{\Z}{\ensuremath{\mathbbm{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbbm{Q}}}
+\newcommand{\R}{\ensuremath{\mathbbm{R}}}
+\newcommand{\C}{\ensuremath{\mathbbm{C}}}
+\newcommand{\rd}{\ensuremath{\mathrm{d}}}
+\newcommand{\id}{\ensuremath{\,\rd}}
+
+\begin{document}
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\title{TNM040 Kommunikation och användargränssnitt\\Laboration 1}
+
+\begin{center}
+  \LARGE TNM040 Kommunikation och användargränssnitt\\Laboration 1
+\end{center}
+
+\section*{Översikt}
+Den här laborationen behandlar främst menyer i Java. Tanken är att du här ska bygga vidare på den sista labben (miniprojektet) från kursen TND002 OOP. Uppgiften består kort sagt i att byta ut det GUI som du gjorde då mot ett menybaserat GUI.
+
+Om du har kvar dina filer från TND002 så kan du skippa resten av detta avsnitt och gå direkt till upppgiften, detta oavsett om du gjorde standardprojektet i form av ett telefonregister eller om du gjorde ett eget projekt med annat tema.
+
+Annars kan du kopiera arkivfilen \texttt{code.zip} från labb-mappen. Den innehåller \texttt{class}-filer för klasserna \texttt{Person} och \texttt{Register} samt dokumentation för båda klasserna. Dessutom ingår det ett enkelt testprogram \texttt{Test.java} som visar hur de båda klasserna kan användas.
+
+Om ``gamla'' JDK 6.0 är installerat på datorn ifråga (och så är fallet i vissa datorsalar) så måste du använda \texttt{class}-filerna från underkatalogen \texttt{jdk6}.
+
+\section*{Uppgift}
+Konstruera ett nytt menybaserat GUI för telefonregistret (eller motsvarande tema). Hur detta gränssnitt ska utformas avgör du (bäst) själv men ditt program ska även omfatta följande saker:
+
+\begin{itemize}
+  \item kortkommandon för några menyval.
+  \item en popup-meny med några menyval.
+  \item fildialoger i samband med att registret öppnas eller sparas. Se t.ex. Skansholm avsnitt 14.7 angående klassen \texttt{JFileChooser}.
+  \item flera innerklasser för händelsehantering. Alltså ingen \texttt{actionPerformed} direkt i GUI-klassen.
+\end{itemize}
+
+Och det är förstås tillåtet att lägga till fler finesser.
+
+\section*{Redovisning}
+
+Demonstrera dina program för assistenten. Någon skriftlig redovisning behövs inte.
+
+\end{document}
