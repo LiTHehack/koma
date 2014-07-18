@@ -1,8 +1,8 @@
 // ===================================================================
-// fil:    ~\tnm040\java\fo2demo\demo06\Demo06.java
+// fil:    lecture_1\demo06\Demo06.java
 // anm:    Demo03 utökad
 // skapad: 2013-09-04 / janpe
-// ändrad: 2013-09-05 / janpe
+// ändrad: 2014-07-18 / klaes950
 // ===================================================================
 
 import java.awt.*;
@@ -12,7 +12,6 @@ import javax.swing.*;
 public class Demo06 extends JFrame
 {
     // instansvariabler
-
     private String shape = "Circle";
     private int    size  = 100;
     private Color  color = Color.RED;
@@ -44,7 +43,6 @@ public class Demo06 extends JFrame
     private JMenuItem mniAbout = new JMenuItem("About ...");
 
     // konstruktor
-
     public Demo06()
     {
         FileHandler fileHandler = new FileHandler();
@@ -113,7 +111,6 @@ public class Demo06 extends JFrame
     }
 
     // händelsehanterare som innerklasser
-
     private class FileHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)

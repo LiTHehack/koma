@@ -1,8 +1,8 @@
 // ===================================================================
-// fil:    ~\tnm040\java\fo2demo\demo02\Demo02.java
+// fil:    lecture_1\demo02\Demo02.java
 // anm:    animering
 // skapad: 2013-09-04 / janpe
-// ändrad: 2013-09-05 / janpe
+// ändrad: 2014-07-18 / klaes950
 // ===================================================================
 
 import java.awt.*;
@@ -12,7 +12,6 @@ import javax.swing.*;
 public class Demo02 extends JFrame implements ActionListener
 {
     // instansvariabler
-
     private String shape = "Circle";
     private int    size  = 100;
     private Color  color = Color.RED;
@@ -25,7 +24,6 @@ public class Demo02 extends JFrame implements ActionListener
     private Timer timer = new Timer(100, this);
 
     // konstruktor
-
     public Demo02()
     {
         btnStart.addActionListener(this);
@@ -52,7 +50,6 @@ public class Demo02 extends JFrame implements ActionListener
     }
 
     // händelsehanterare
-
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == btnStart)
@@ -73,7 +70,6 @@ public class Demo02 extends JFrame implements ActionListener
     }
 
     // startmetoden main
-
     public static void main(String[] args)
     {
         Demo02 frame = new Demo02();

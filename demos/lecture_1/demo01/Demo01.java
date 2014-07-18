@@ -1,5 +1,5 @@
 // ===================================================================
-// fil:    demo01/Demo01.java
+// fil:    lecture_1\demo01\Demo01.java
 // anm:    grafik
 // skapad: 2013-09-04 / janpe
 // ändrad: 2013-09-05 / klaes950

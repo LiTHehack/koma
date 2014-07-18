@@ -1,5 +1,5 @@
 // ===================================================================
-// fil:    ~\tnm040\java\fo2demo\demo03\Demo03.java
+// fil:    lecture_1\demo03\Demo03.java
 // anm:    Demo01 men meny istf knappar
 // skapad: 2013-09-04 / janpe
 // ändrad: 2014-07-11 / klaes950
@@ -12,7 +12,6 @@ import javax.swing.*;
 public class Demo03 extends JFrame implements ActionListener
 {
     // instansvariabler
-
     private String shape = "Circle";
     private int    size  = 100;
     private Color  color = Color.RED;
@@ -29,7 +28,6 @@ public class Demo03 extends JFrame implements ActionListener
     private JMenuItem mniSquare = new JMenuItem("Square");
 
     // konstruktor
-
     public Demo03()
     {
         mniCircle.addActionListener(this);
@@ -59,7 +57,6 @@ public class Demo03 extends JFrame implements ActionListener
     }
 
     // händelsehanterare
-
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == mniCircle)
@@ -75,7 +72,6 @@ public class Demo03 extends JFrame implements ActionListener
     }
 
     // startmetoden main
-
     public static void main(String[] args)
     {
         Demo03 frame = new Demo03();

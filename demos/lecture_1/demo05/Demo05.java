@@ -1,5 +1,5 @@
 // ===================================================================
-// fil:    ~\tnm040\java\fo2demo\demo05\Demo05.java
+// fil:    lecture_1\demo05\Demo05.java
 // anm:    Demo03 + popup-meny
 // skapad: 2013-09-04 / janpe
 // ändrad: 2014-07-11 / klaes950

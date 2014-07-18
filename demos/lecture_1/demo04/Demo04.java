@@ -1,5 +1,5 @@
 // ===================================================================
-// fil:    ~\tnm040\java\fo2demo\demo04\Demo04.java
+// fil:    lecture_1\demo04\Demo04.java
 // anm:    Demo03 + kortkommandon
 // skapad: 2013-09-04 / janpe
 // ändrad: 2014-07-11 / klaes950
@@ -12,7 +12,6 @@ import javax.swing.*;
 public class Demo04 extends JFrame implements ActionListener
 {
     // instansvariabler
-
     private String shape = "Circle";
     private int    size  = 100;
     private Color  color = Color.RED;
@@ -29,7 +28,6 @@ public class Demo04 extends JFrame implements ActionListener
     private JMenuItem mniSquare = new JMenuItem("Square");
 
     // konstruktor
-
     public Demo04()
     {
         mniCircle.addActionListener(this);
@@ -62,7 +60,6 @@ public class Demo04 extends JFrame implements ActionListener
     }
 
     // händelsehanterare
-
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == mniCircle)
@@ -78,7 +75,6 @@ public class Demo04 extends JFrame implements ActionListener
     }
 
     // startmetoden main
-
     public static void main(String[] args)
     {
         Demo04 frame = new Demo04();
