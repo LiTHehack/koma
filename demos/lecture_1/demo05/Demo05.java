@@ -2,7 +2,7 @@
 // fil:    lecture_1\demo05\Demo05.java
 // anm:    Demo03 + popup-meny
 // skapad: 2013-09-04 / janpe
-// ändrad: 2014-07-11 / klaes950
+// andrad: 2014-07-11 / klaes950
 // ===================================================================
 
 import java.awt.*;
@@ -69,7 +69,7 @@ public class Demo05 extends JFrame implements ActionListener
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    // händelsehanterare
+    // handelsehanterare
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == mniCircle || e.getSource() == pmiCircle)
@@ -84,12 +84,12 @@ public class Demo05 extends JFrame implements ActionListener
         drawer.setShape(shape, size, color);
     }
 
-    // innerklass för muslyssnare mha adapterklass
+    // innerklass for muslyssnare mha adapterklass
     private class PopupHandler extends MouseAdapter
     {
         public void mousePressed(MouseEvent e)
         {
-            if (e.isMetaDown()) // Höget musknapp nedtryckt?
+            if (e.isMetaDown()) // Hoger musknapp nedtryckt?
             {
                 pmnEdit.show(e.getComponent(), e.getX(), e.getY());
             }

@@ -1,8 +1,8 @@
 // ===================================================================
 // fil:    lecture_1\demo06\Demo06.java
-// anm:    Demo03 utökad
+// anm:    Demo03 utokad
 // skapad: 2013-09-04 / janpe
-// ändrad: 2014-07-18 / klaes950
+// andrad: 2014-07-18 / klaes950
 // ===================================================================
 
 import java.awt.*;
@@ -110,7 +110,7 @@ public class Demo06 extends JFrame
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    // händelsehanterare som innerklasser
+    // handelsehanterare som innerklasser
     private class FileHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)

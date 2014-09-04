@@ -2,7 +2,7 @@
 // fil:    lecture_1\demo03\Demo03.java
 // anm:    Demo01 men meny istf knappar
 // skapad: 2013-09-04 / janpe
-// ändrad: 2014-07-11 / klaes950
+// andrad: 2014-07-11 / klaes950
 // ===================================================================
 
 import java.awt.*;
@@ -56,7 +56,7 @@ public class Demo03 extends JFrame implements ActionListener
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    // händelsehanterare
+    // handelsehanterare
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == mniCircle)

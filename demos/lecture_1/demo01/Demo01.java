@@ -2,7 +2,7 @@
 // fil:    lecture_1\demo01\Demo01.java
 // anm:    grafik
 // skapad: 2013-09-04 / janpe
-// ändrad: 2013-09-05 / klaes950
+// andrad: 2013-09-05 / klaes950
 // ===================================================================
 
 import java.awt.*;
@@ -46,7 +46,7 @@ public class Demo01 extends JFrame implements ActionListener
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    // händelsehanterare
+    // handelsehanterare
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == btnCircle)

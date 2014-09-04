@@ -2,7 +2,7 @@
 // fil:    lecture_1\demo04\Demo04.java
 // anm:    Demo03 + kortkommandon
 // skapad: 2013-09-04 / janpe
-// ändrad: 2014-07-11 / klaes950
+// andrad: 2014-07-11 / klaes950
 // ===================================================================
 
 import java.awt.*;
@@ -59,7 +59,7 @@ public class Demo04 extends JFrame implements ActionListener
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    // händelsehanterare
+    // handelsehanterare
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == mniCircle)

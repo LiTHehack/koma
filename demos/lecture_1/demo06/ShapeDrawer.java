@@ -1,8 +1,8 @@
 // ===================================================================
 // fil:    demoXX\ShapeDrawer.java
-// anm:    fortlöpande exempel
+// anm:    fortlopande exempel
 // skapad: 2013-09-04 / janpe
-// ändrad: 2014-07-10 / klaes950
+// andrad: 2014-07-10 / klaes950
 // ===================================================================
 
 import java.awt.*;
