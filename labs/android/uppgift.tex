@@ -55,25 +55,16 @@ Uppgiften är att göra en “Att göra-lista” med möjlighet att lägga till 
 \section{Installation}
 För att installera Android Studio gå in på \href{http://developer.android.com/sdk/installing/studio.html}{http://developer.android.com/sdk/installing/studio.html} och välj “Download Android Studio Beta with the Android SDK”. Utvecklingsmiljön är en färdigkonfigurerad version av IntelliJ IDEA och finns till Windows, Linux och Mac.\\
 
-Packa upp zip-filen till D: och öppna Android Studio från från “bin/filnamn.exe”.
-Första gången du öppnar Android Studio kommer den fråga var du vill placera dess workspaces.
-Vi föreslår att du väljer en mapp som finns på “privat\_stuff”, vi kommer att använda “H:/Workspace”.
+Öppna installationsfilen, och välj att du vill installera programmet.
+Välj att du vill installera programmet på ``D:''-disken, förslagsvis i ``D:/Android Studio/'' eller någon liknande mapp du själv skapar.
+Välj att starta Android Studio, och sedan att inte importera tidigare inställningar.\\
 
-%
-%
-%
-%
-%
-%
-%
-% FIXME – instruktioner för att komma igång
-%
-%
-%
-%
-%
-%
-%
+Android Studio frågar sedan vad du vill göra.
+Välj att skapa ett nytt projekt, och döp det till något festligt, till exempel ``My magic spectacular todo-list'', eller något annat namn som faller dig i smaken.
+I rutan för ``Project Location'' väljer du vart du vill spara dina filer.
+Vi föreslår att du väljer en mapp som finns på “privat\_stuff”, vi kommer att använda “H:/Workspace”.
+Klicka på next, och välj att du vill skapa en app för ``Phone \& Tablet'' med ``API 15: Android 4.0.3'' eller högre som ``Minimum SDK''.
+Välj sedan att du vill ha en ``Blank Activity'', och ge den namnet ``MainActivity''.\\
 
 \subsection{Skapa en Androidemulator}
 För att kunna köra en Androidapplikation behövs en Androidenhet.
@@ -86,18 +77,11 @@ Target:  Android 4.4 - API Level 19\\
 Emulating Options:  Use host GPU\\
 Lämna resten som default.\\
 
-\subsection{Skapa Projektet}
-Nu har du startat Eclipse samt skapat en enhet.
-Nu är det dags för det roliga, koda!
-\\
-Välj “File -> New -> Android Application Project” och följ instruktionerna. Fyll i inställningarna så att de ser ut som följer:\\
-Application Name:  MyToDoList\\
-Kryssa i ``Phone \& Tablet'' och välj \\
-Minimum Required SDK:  API 15: Android 4.0.3 (IceCreamSandwich) \\
-Välj sedan att du vill ha en ``Blank Activity'', och ge den namnet ``MainActivity''.\\
-\\
-Fortsätt genom att använda defaultinställningarna på resten av valen och avsluta med “Finish”.
-%Nu kan ditt fönster fortfarande ha en välkomstmeny till Android SDK. Avsluta den med krysset som är uppe i vänstra hörnet i den inre ramen.
+% SDK MANAGER OM DET INTE FINNS API 19 typ
+\textbf{Om API Leve 19 inte finns i listan} kan du behöva installera det.
+Gör det genom att kryssa rutan som dök upp när du valde att skapa en ny enhet och krysssa sedan också AVD Manager.
+Gå sedan i menyn till Android Studio “Tools -> Android -> SDK Manager”, kryssa API 19 i listan (vänta en liten stund om den inte dyker upp direkt) och klicka sedan på installera-knappen.
+Nu ska du kunna skapa din enhet med rätt inställningar!\\
 
 Kör din Androidapplikation genom att trycka på “Play” knappen i menyn eller Ctrl+F11, och kryssa sedan i ``Launch emulator'' och välj ``MyDevice'' som du skapade tidigare.
 Notera att Androidemulatorn tar några minuter att starta första gången.
