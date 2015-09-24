@@ -31,7 +31,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section class="noprint">
-					<h4>Använd piltangenterna!</h4>
+					<h3>Använd piltangenterna!</h3>
+					<h4>Slides finns på <a href="http://lithehack.se/koma">lithehack.se/koma</a></h4>
 				</section>
 
 				<section data-background="#441D2B">
@@ -56,44 +57,18 @@
 
 					<aside class="notes">
 						Gå igenom idag. <br>
-						Underlätta för användaren.
+						Introduktion till operativsystemet Android. <br>
+						Grundläggande introduktion av Android, lite statistik samt allmän info. <br>
+						Introduktion av hur en Androidapplikation ser ut; folderstruktur, kod, resurser osv. <br>
+						Utvecklingsmiljön Android Studio, ett relativt nytt program, med stöd för att visuellt skapa gränssnitt och mycket bra kodverktyg.
 					</aside>
-				</section>
-
-				<section data-background="#441D2B">
-					<h1>Responsivitet</h1>
-					<h3 class="fragment fade-in">
-						<s>Progressive enhancement</s>
-					</h3>
-				</section>
-
-				<section data-background="#fff">
-					<h3>Android, Augusti 2012</h3>
-					<img src="img/responsive/frag_android_screen_weighted.png" class="plain" alt="">
-					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
-
-					<aside class="notes">
-						Responsivitet är viktigt. Inte minst i Android-världen. <br>
-						Augusti 2012 såg det ut såhär. <br>
-						Illustrerar upplösningarna på olika android-enheter. Många olika alternativ. <br>
-					</aside>
-				</section>
-
-				<section data-background="#fff">
-					<h3>iOS, Augusti 2012</h3>
-					<img src="img/responsive/frag_iphone_screen.png" class="plain" alt="">
-					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
-				</section>
-
-				<section>
-					<h2>I praktiken</h2>
 				</section>
 
 				<section data-background="#441D2B">
 					<h1>Android!</h1>
 
 					<aside class="notes">
-						Innan vi snackar om responsivitet i Android så tänker vi att vi ska prata lite om Android i helhet, så att vi alla är på samma plan och så att vi alla snackar om samma sak.
+						Vi ska prata lite om Android i helhet, så att vi alla är på samma plan och så att vi alla snackar om samma sak.
 					</aside>
 				</section>
 
@@ -110,9 +85,54 @@
 
 					<aside class="notes">
 						Google skött huvudsaklig utveckling sedan 2005. <br>
-						Stort. Världens största. 1 mdr aktiva enheter i juli 2014. <br>
+						Stort. Världens största. 1,6 mdr aktiva enheter i juli 2014. <br>
+						Viktigt att erbjuda sin tjänst till mobila enheter -> mer och mer trafik från mobila webbläsare. <br>
 						Utveckling, spännande siffror. Populär grej. Google Play. <br>
-						Varför inte iOS? Kostar. Android är gratis och nize. Bygger på Java!
+						Varför inte iOS? (Kostar.) Android är gratis och nize. Bygger på Java!
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Android, Augusti 2012</h3>
+					<img src="img/responsive/frag_android_screen_weighted.png" class="plain" alt="">
+					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
+
+					<aside class="notes">
+						Responsivitet är viktigt. Inte minst i Android-världen. <br>
+						Augusti 2012 såg det ut såhär -> har bara blivit värre sen dess. <br>
+						Illustrerar upplösningarna på olika android-enheter. Många olika alternativ. <br>
+						Mycket viktigt att inte göra ett "statiskt" gränssnitt -> tänk på att göra det dynamiskt a.k.a. responsivt.
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Android, 7 september 2015</h3>
+					<img src="img/android-api-chart.png" class="plain" alt="">
+					<p><a href="https://developer.android.com/about/dashboards/index.html">Källa</a></p>
+
+					<aside class="notes">
+						Ej heller har alla användare samma Android-version. Ganska långsam uppdatering till nyare Android-släpp. <br>
+						Ha det i åtanke då ni utvecklar applikationer med funktionalitet från nyare releaser.
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<h3>iOS, Augusti 2012</h3>
+					<img src="img/responsive/frag_iphone_screen.png" class="plain" alt="">
+					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
+
+					<aside class="notes">
+						Enklare situation på iOS-sidan, en handfull olika skärmstorlekar.
+					</aside>
+				</section>
+
+				<section data-background="#fff">
+					<h3>iOS, 24 september 2015</h3>
+					<img src="img/ios-version-graph.png" class="plain" alt="">
+					<p><a href="https://david-smith.org/iosversionstats/">Källa</a></p>
+
+					<aside class="notes">
+						Snabbare adoption av nya versioner på iOS. Fun fact.
 					</aside>
 				</section>
 
@@ -252,6 +272,8 @@
 
 					<aside class="notes">
 						Exempel på hur det kan se ut med flera olika inställningar. <br>
+						"hdpi" vs "ldpi" är high- respektive low dpi. <br>
+						"sw600dp" är vyer som kommer användas på enheter med minst 600dp upplösning. Density-Independent Pixels -> abstrakt pixelmått. <br>
 						values – anpassa tex strängar efter olika länder och platser. Svenska, franska i belgien. <br>
 						Kombinera olika qualifiers. <br>
 						Om ni gör en app enbart för plattor, glöm inte att slänga in detta i manifestet.
@@ -325,44 +347,95 @@ setContentView(R.layout.main_screen);</code></pre>
 				</section>
 
 				<section>
-					<h5><code>activity_my.xml</code></h5>
-					<pre><code class="xml">&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:padding="@dimen/activity_common_margin"
-  tools:context=".MyActivity">
+					<section>
+						<h3>Test App</h3>
+						<h5><code>MyActivity.java</code></h5>
+						<pre><code class="">// Importer osv.
+	public class MyActivity extends Activity {
+	  @Override
+	  protected void onCreate(Bundle savedInstanceState) {
+	      super.onCreate(savedInstanceState);
+	      setContentView(R.layout.activity_my);
+	  }
+	  // ...
+	</code></pre>
+						<h5><code>activity_my.xml</code></h5>
+						<pre><code class="xml">&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:tools="http://schemas.android.com/tools"
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent"
+	  android:padding="@dimen/activity_common_margin"
+	  tools:context=".MyActivity">
 
-  &lt;TextView
-    android:text="@string/hello_world"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+	  &lt;TextView
+	    android:text="@string/hello_world"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
 
-&lt;/RelativeLayout>
-</code></pre>
-					<h5><code>MyActivity.java</code></h5>
-					<pre><code class="">// Importer osv.
-public class MyActivity extends Activity {
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_my);
-  }
-  // ...
-</code></pre>
-					<h5><code>strings.xml</code></h5>
-					<pre><code class="xml">&lt;?xml version="1.0" encoding="utf-8"?>
-&lt;resources>
-  &lt;string name="hello_world">Hello world!&lt;/string>
-&lt;/resources>
-</code></pre>
-					<aside class="notes">
-						Berätta att det är Android-xml, typ. <br>
-						Lite inställningar, hämta grej från values-fil <br>
-						Visa text <br>
-						Importera lite olika Androidpaket osv, som vanligt i Java <br>
-						onCreate körs direkt, @overide berättar saker för programmet du jobbar i, varnar om du stavar fel osv.
-					</aside>
+	&lt;/RelativeLayout>
+	</code></pre>
+						<h5><code>strings.xml</code></h5>
+						<pre><code class="xml">&lt;?xml version="1.0" encoding="utf-8"?>
+	&lt;resources>
+	  &lt;string name="hello_world">Hello world!&lt;/string>
+	&lt;/resources>
+	</code></pre>
+						<aside class="notes">
+							Berätta att det är Android-xml, typ. <br>
+							Lite inställningar, hämta grej från values-fil <br>
+							Visa text <br>
+							Importera lite olika Androidpaket osv, som vanligt i Java <br>
+							onCreate körs direkt, @overide berättar saker för programmet du jobbar i, varnar om du stavar fel osv.
+						</aside>
+					</section>
+					<section>
+						<h3>Appens logik</h3>
+						<h5><code>MyActivity.java</code></h5>
+						<pre><code class="">// Importer osv.
+	public class MyActivity extends Activity {
+	  @Override
+	  protected void onCreate(Bundle savedInstanceState) {
+	      super.onCreate(savedInstanceState);
+	      setContentView(R.layout.activity_my);
+	  }
+	  // ...
+	</code></pre>
+						<br>
+						<p>Specifierad som appens utgångspunkt (i AndroidManifest.xml).</p>
+						<aside class="notes">
+							Berätta att det är Android-xml, typ. <br>
+							Lite inställningar, hämta grej från values-fil <br>
+							Visa text <br>
+							Importera lite olika Androidpaket osv, som vanligt i Java <br>
+							onCreate körs direkt, @overide berättar saker för programmet du jobbar i, varnar om du stavar fel osv.
+						</aside>
+					</section>
+					<section>
+						<h3>Vyer och resurser</h3>
+						<h5><code>activity_my.xml</code></h5>
+						<pre><code class="xml">&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:tools="http://schemas.android.com/tools"
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent"
+	  android:padding="@dimen/activity_common_margin"
+	  tools:context=".MyActivity">
+
+	  &lt;TextView
+	    android:text="@string/hello_world"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
+
+	&lt;/RelativeLayout>
+	</code></pre>
+						<h5><code>strings.xml</code></h5>
+						<pre><code class="xml">&lt;?xml version="1.0" encoding="utf-8"?>
+	&lt;resources>
+	  &lt;string name="hello_world">Hello world!&lt;/string>
+	&lt;/resources>
+	</code></pre>
+						<br>
+						<p>Laddas av dina Java-klasser.</p>
+					</section>
 				</section>
 
 				<section>
@@ -371,6 +444,24 @@ public class MyActivity extends Activity {
 					<p>
 						<img src="img/lab.png" alt="" class="plain">
 					</p>
+				</section>
+
+				<section>
+					<h1>Android Studio</h1>
+					<h3>Officiell utvecklingsmiljö för Android</h3>
+					<aside class="notes">
+						Tidigare var Eclipse med en Android-plugin den rek. utvecklingsmiljön för Android, men i slutet på 2014 gick det över till AS. <br>
+						Bygger på IntelliJ IDEA, en Java-IDE från JetBrains. <br>
+						Mycket bra verktyg för visuell design av gränssnitt, kod-refactoring och debugging.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Demo av Android Studio</h2>
+					<h4 class="fragment fade-in">Wow.</h4>
+					<aside class="notes">
+						Notes.
+					</aside>
 				</section>
 
 			</div>
