@@ -48,9 +48,9 @@
 					<h3>Idag</h3>
 					<p>
 						<ul>
-							<li>Responsivitet</li>
-							<li>Android?</li>
+							<li>Android!</li>
 							<li>App-struktur</li>
+							<li>Utvecklingsmiljön Android Studio</li>
 						</ul>
 					</p>
 
@@ -65,13 +65,6 @@
 					<h3 class="fragment fade-in">
 						<s>Progressive enhancement</s>
 					</h3>
-
-					<aside class="notes">
-						Ganska välanvänt begrepp – kan betyda flera saker. Coolt sedan 2011. <b>En</b> lösning för att lösa problemet att skapa system för flera olika enheter. <br>
-						Vi kommer fokusera på betydelsen att med så enkla medel som möjligt, göra något anpassat för så många enheter som möjligt. <br>
-						Detta kommer vi kika på mer än PE, som snarare fokuserar på att ge användare med hög kapacitet mycket. <br>
-						Problemet med responsivitet är att det kan bli segt för telefoner att över 3G ladda ned samma bild som över bb.
-					</aside>
 				</section>
 
 				<section data-background="#fff">
@@ -96,66 +89,11 @@
 					<h2>I praktiken</h2>
 				</section>
 
-				<section>
-					<h5>HTML & CSS</h5>
-					<h3>Media queries</h3>
-					<pre><code class="css">
-@media (max-width: 320px) {
-  /* ... massa kod här! */
-}
-					</code></pre>
-					<pre><code class="css">
-@media (min-width: 700px) and (orientation: landscape)	 {
-  /* ... massa kod här! */
-}
-					</code></pre>
-					<p>
-						<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries">Mer info!</a>
-					</p>
-
-					<aside class="notes">
-						Styra när din CSS-kod gäller.
-					</aside>
-				</section>
-
-				<section>
-					<img src="img/responsive/all.png" alt="" class="plain">
-					<pre><code class="css">@media (max-width: 700px) {
-  .column {
-    clear: both;
-  }
-}</code></pre>
-
-					<aside class="notes">
-						Exempel med kolumn-system. "Gridsystem"
-					</aside>
-				</section>
-
-				<section>
-					<h3>Olika verktyg</h3>
-					<p>
-						<ul>
-							<li><a href="http://purecss.io/">Pure</a></li>
-							<li><a href="http://www.getskeleton.com/">Skeleton</a></li>
-							<li><a href="http://getbootstrap.com">Bootstrap</a></li>
-							<li><a href="http://www.sitepoint.com/css/foundation/">Foundation</a></li>
-							<li><a href="http://responsive.gs/">Responsive</a></li>
-							<li><a href="http://semantic-ui.com/">Semantic UI</a></li>
-							<li>Osv, osv, osv.</li>
-						</ul>
-					</p>
-
-					<aside class="notes">
-						Men, ingen ide att uppfinna hjulet på nytt. Finns många bra verktyg, som alla har liknande lösningar på samma system. <br>
-						Välj det som känns bäst!
-					</aside>
-				</section>
-
 				<section data-background="#441D2B">
-					<h1>Android?</h1>
+					<h1>Android!</h1>
 
 					<aside class="notes">
-						Innan vi snackar om responsivitet i Android så tänker jag att vi ska prata lite om Android i helhet, så att vi alla är på samma plan och så att vi alla snackar om samma sak.
+						Innan vi snackar om responsivitet i Android så tänker vi att vi ska prata lite om Android i helhet, så att vi alla är på samma plan och så att vi alla snackar om samma sak.
 					</aside>
 				</section>
 
@@ -163,8 +101,8 @@
 					<p>
 						<ul>
 							<li>Mobilt operativsystem</li>
-							<li>1 miljard aktiva enheter</li>
-							<li>1 miljon appar, 50 miljarder nedladdningar</li>
+							<li><a href="http://www.statista.com/statistics/385001/smartphone-worldwide-installed-base-operating-systems/">1,6 miljarder aktiva enheter</a></li>
+							<li><a href="http://www.statista.com/statistics/276623/number-of-apps-available-in-leading-app-stores/">1,6 miljoner appar</a>, mer än 50 miljarder nedladdningar</li>
 							<li>Java</li>
 							<li>Gratis att komma igång med!</li>
 						</ul>
@@ -200,7 +138,7 @@
 
 					<aside class="notes">
 						Behövs vid utveckling av android. Paket med mjukvaror. <br>
-						Finns Eclipse med ADT, finns också nya bra Android Studio som vi kommer använda. <br>
+						Android Studio är Googles officiella IDE som vi kommer använda. <br>
 						Går att lära sig massa på developer.android.com/training
 					</aside>
 				</section>
@@ -237,6 +175,7 @@
 						Fil direkt i roten, alltså högst upp i hiearkin, måste finnas med rätt namn. <br>
 						XML-formatterad, likt html. <br>
 						Styr hur andra appar kan interagera med din app, men också grundläggande saker som hur systemet ska starta din app och vilka tillstånd som behövs. <br>
+							Exempel: Ge applikationen tillgång till internet, Bluetooth eller möjlighet att skriva filer till externa filsystemet (t.ex. bilder). <br>
 						Massa spännande och ospännande, och jättetekniskt, läs!
 					</aside>
 				</section>
