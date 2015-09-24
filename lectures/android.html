@@ -37,10 +37,11 @@
 
 				<section data-background="#441D2B">
 					<h1>Android</h1>
-
 					<h3>Och utveckling för mobila enheter</h3>
 
 					<aside class="notes">
+						B<br><br>
+						Presentation av föreläsningen: "Välkomna till LiTHehacks Android-föreläsning."
 						Androiiiiid!
 					</aside>
 				</section>
@@ -56,7 +57,8 @@
 					</p>
 
 					<aside class="notes">
-						<strong>J</strong><br>
+						B<br><br>
+
 						Gå igenom idag. <br>
 						Introduktion till operativsystemet Android. <br>
 						Grundläggande introduktion av Android, lite statistik samt allmän info. <br>
@@ -69,6 +71,8 @@
 					<h1>Android!</h1>
 
 					<aside class="notes">
+						J<br><br>
+
 						Vi ska prata lite om Android i helhet, så att vi alla är på samma plan och så att vi alla snackar om samma sak.
 					</aside>
 				</section>
@@ -85,6 +89,8 @@
 					</p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Google skött huvudsaklig utveckling sedan 2005. <br>
 						Stort. Världens största. 1,6 mdr aktiva enheter i juli 2014. <br>
 						Viktigt att erbjuda sin tjänst till mobila enheter -> mer och mer trafik från mobila webbläsare. <br>
@@ -99,6 +105,8 @@
 					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Responsivitet är viktigt. Inte minst i Android-världen. <br>
 						Augusti 2012 såg det ut såhär -> har bara blivit värre sen dess. <br>
 						Illustrerar upplösningarna på olika android-enheter. Många olika alternativ. <br>
@@ -112,6 +120,8 @@
 					<p><a href="https://developer.android.com/about/dashboards/index.html">Källa</a></p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Ej heller har alla användare samma Android-version. Ganska långsam uppdatering till nyare Android-släpp. <br>
 						Ha det i åtanke då ni utvecklar applikationer med funktionalitet från nyare releaser.
 					</aside>
@@ -123,6 +133,8 @@
 					<p><a href="http://opensignal.com/reports/fragmentation.php">Källa</a></p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Enklare situation på iOS-sidan, en handfull olika skärmstorlekar.
 					</aside>
 				</section>
@@ -133,6 +145,8 @@
 					<p><a href="https://david-smith.org/iosversionstats/">Källa</a></p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Snabbare adoption av nya versioner på iOS. Fun fact.
 					</aside>
 				</section>
@@ -141,6 +155,8 @@
 					<h1>App-struktur</h1>
 
 					<aside class="notes">
+						J<br><br>
+
 						Innan responsivitet också lite om hur en app är upplagd. Det är ett ganska omfattande system, och vi hinner bara skrapa lite på ytan. Men detta i kombination med labben kommer ge er tillräckligt mycket för att komma igång med det. <br>
 						Långt ifrån allt, endast en liten början.
 					</aside>
@@ -158,6 +174,8 @@
 					</p>
 
 					<aside class="notes">
+						B<br><br>
+
 						Behövs vid utveckling av android. Paket med mjukvaror. <br>
 						Android Studio är Googles officiella IDE som vi kommer använda. <br>
 						Går att lära sig massa på developer.android.com/training
@@ -181,6 +199,8 @@
 					</p>
 
 					<aside class="notes">
+						B<br><br>
+
 						En ny, tom, app har ungefär den här strukturen. <br>
 						Det antagligen enklaste sättet att skapa en app på är via Android Studio eller Eclipse med ett Android-tillägg.
 					</aside>
@@ -189,10 +209,12 @@
 				<section class="left">
 					<h3><code><a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">AndroidManifest.xml</a></code></h3>
 					<p>
-						Styr appen intern och externt.
+						Styr appen internt och externt.
 					</p>
 
 					<aside class="notes">
+						B<br><br>
+
 						Fil direkt i roten, alltså högst upp i hiearkin, måste finnas med rätt namn. <br>
 						XML-formatterad, likt html. <br>
 						Styr hur andra appar kan interagera med din app, men också grundläggande saker som hur systemet ska starta din app och vilka tillstånd som behövs. <br>
@@ -208,6 +230,8 @@
 					</p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Resurser och tillgångar till appen. <br>
 						Allting är ganska separerat i android, vyer är på ett annat ställe än logik. <br>
 						Bryta ut koden så möjligt, skapa överskådliga strukturer och gör allt lättare att hantera. Fixa med en bild utan att härja med kod.
@@ -248,6 +272,8 @@
 					</p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Exempel på hiearki. Bilder hör hemma i drawable-mappen, vyer i layout och i values går det att spara saker som textsträngar, stiler osv <br>
 						Inga undermappar, tänk på det. <br>
 						Fler grejer, menu, raw, xml, animator <br>
@@ -272,6 +298,8 @@
 					</p>
 
 					<aside class="notes">
+						J<br><br>
+
 						Exempel på hur det kan se ut med flera olika inställningar. <br>
 						"hdpi" vs "ldpi" är high- respektive low dpi. <br>
 						"sw600dp" är vyer som kommer användas på enheter med minst 600dp upplösning. Density-Independent Pixels -> abstrakt pixelmått. <br>
@@ -292,6 +320,8 @@
 					</p>
 
 					<aside class="notes">
+						B<br><br>
+
 						Exempel bra/dåligt. Förklara diff. Hämtat från guiden. <br>
 						Upplevelsen bör ej variera beroende av enhetens pixeldensitet.
 					</aside>
@@ -316,10 +346,15 @@ setContentView(R.layout.main_screen);</code></pre>
 							<li><code>layout-sw600dp/<span class="fragment fade-out irrelevant" data-fragment-index="1">main_screen.xml</span></code></li>
 						</ul>
 					</p>
+					<aside class="notes">
+						B<br><br>
+
+						Hur en resurs laddas i Java-kod. <br>
+						Poängtera att man kommer åt en Drawable i koden via dess namn helt utan qualifiers - sådant sköter Android självt.
+					</aside>
 				</section>
 
 				<section class="left">
-					<img src="img/phone.png" alt="" class="plain" style="float: right;">
 					<h3><code><a href="http://developer.android.com/guide/topics/ui/declaring-layout.html">layout/</a></code></h3>
 					<h4>
 						Användargränssnitt för appen
@@ -338,8 +373,11 @@ setContentView(R.layout.main_screen);</code></pre>
 							<li>Responsivt</li>
 						</ul>
 					</p>
+					<img src="img/phone.png" alt="" class="plain" style="float: right;">
 
 					<aside class="notes">
+						J<br><br>
+
 						I layoutmappen finns de filer som styr de olika vyerna och användargränssnitten för en app. <br>
 						Den kan skrivas antingen i XML (fokus för oss) eller under runtime. (Poängen är att separera.) Ganska likt HTML och JavaScript <br>
 						Också via grafiskt gränssnitt. Labben grafiskt och xml. <br>
@@ -437,6 +475,11 @@ setContentView(R.layout.main_screen);</code></pre>
 						<br>
 						<p>Laddas av dina Java-klasser.</p>
 					</section>
+					<aside class="notes">
+						B<br><br>
+
+						Sammanfatta de olika komponenterna för en fungerande applikation.
+					</aside>
 				</section>
 
 				<section>
@@ -445,12 +488,18 @@ setContentView(R.layout.main_screen);</code></pre>
 					<p>
 						<img src="img/lab.png" alt="" class="plain">
 					</p>
+
+					<aside class="notes">
+						J<br><br>
+					</aside>
 				</section>
 
 				<section>
 					<h1>Android Studio</h1>
 					<h3>Officiell utvecklingsmiljö för Android</h3>
 					<aside class="notes">
+						B<br><br>
+
 						Tidigare var Eclipse med en Android-plugin den rek. utvecklingsmiljön för Android, men i slutet på 2014 gick det över till AS. <br>
 						Bygger på IntelliJ IDEA, en Java-IDE från JetBrains. <br>
 						Mycket bra verktyg för visuell design av gränssnitt, kod-refactoring och debugging.
@@ -461,6 +510,8 @@ setContentView(R.layout.main_screen);</code></pre>
 					<h2>Demo av Android Studio</h2>
 					<h4 class="fragment fade-in">Wow.</h4>
 					<aside class="notes">
+						B<br><br>
+
 						Notes.
 					</aside>
 				</section>
