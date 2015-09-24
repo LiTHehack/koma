@@ -44,52 +44,47 @@
 
 
 \title{Kommunikation och Användargränssnitt - Androidutveckling}
-\author{Andreas Valter \and Fredrik Lindner \and Karl-Johan Krantz \and Jonas Strandstedt \and Jonas Zeitler \and Klas Eskilson}
+\author{Andreas Valter \and Fredrik Lindner \and Karl-Johan Krantz \and Jonas Strandstedt \and Jonas Zeitler \and Klas Eskilson \and Jonathan Grangien}
 \maketitle
 
 \section{Syfte}
 Denna laboration är en introduktion till Androidprogrammering för att ni ska ha möjlighet att göra en mobilapp som projekt.
-Ni kommer även att få en introduktion till hur man använder enklaste möjliga databas tillsammans med Android, det möjliggör applikationer med mer avancerade data.
+Ni kommer även att få en introduktion till hur man använder enklaste möjliga databas tillsammans med Android, det möjliggör applikationer med mer avancerade data!
 \section{Inledning}
 Uppgiften är att göra en “Att göra-lista” med möjlighet att lägga till och ta bort uppgifter.
-\section{Installation}
-För att installera Android Studio gå in på \href{http://developer.android.com/sdk/installing/studio.html}{http://developer.android.com/sdk/installing/studio.html} och välj “Download Android Studio Beta with the Android SDK”. Utvecklingsmiljön är en färdigkonfigurerad version av IntelliJ IDEA och finns till Windows, Linux och Mac.\\
+\section{Utvecklingsmiljö}
+Vi använder Android Studio för labben. För att öppna programmet, hitta fram till och kör filen ``S:\textbackslash \textbackslash Android\textbackslash a\_studio\textbackslash Android\textbackslash Android Studio\textbackslash bin\textbackslash Studio64.exe''.\\
 
-Öppna installationsfilen, och välj att du vill installera programmet.
-Välj att du vill installera programmet på ``D:''-disken, förslagsvis i ``D:/Android Studio/'' eller någon liknande mapp du själv skapar.
-Välj att starta Android Studio, och sedan att inte importera tidigare inställningar.\\
-
-Android Studio frågar sedan vad du vill göra.
-Välj att skapa ett nytt projekt, och döp det till något festligt, till exempel ``My magic spectacular todo-list'', eller något annat namn som faller dig i smaken.
+När du öppnar Android Studio frågar hen vad du vill göra.
+Välj att skapa ett nytt projekt, och döp det till något, till exempel ``Awesome freakin todo-list'', eller något bättre namn.
 I rutan för ``Project Location'' väljer du vart du vill spara dina filer.
 Vi föreslår att du väljer en mapp som finns på “privat\_stuff”, vi kommer att använda “H:/Workspace”.
-Klicka på next, och välj att du vill skapa en app för ``Phone \& Tablet'' med ``API 15: Android 4.0.3'' eller högre som ``Minimum SDK''.
+Klicka på next, och välj att du vill skapa en app för ``Phone \& Tablet'' med ``API 19: Android 4.4'' eller högre som ``Minimum SDK''.
 Välj sedan att du vill ha en ``Blank Activity'', och ge den namnet ``MainActivity''.\\
 
 \subsection{Skapa en Androidemulator}
 För att kunna köra en Androidapplikation behövs en Androidenhet.
 Eftersom vi inte utgår från att alla har en Androidtelefon/-platta föreslår vi att installera en Androidemulator.
-“Tools -> Android -> Android Virtual Device Manager / AVD Manager”, välj sedan “Create...”.
+“Tools -> Android -> Android Virtual Device Manager / AVD Manager”, välj sedan “Create...”. Förslagsvis:
 \\
 AVD Name: MyDevice\\
 Device:  Nexus 5\\
-Target:  Android 4.4 - API Level 19\\
+Target:  Android 4.4 - API Level 21\\
 Emulating Options:  Use host GPU\\
 Lämna resten som default.\\
 
 % SDK MANAGER OM DET INTE FINNS API 19 typ
-\textbf{Om API Leve 19 inte finns i listan} kan du behöva installera det.
+\textbf{Om upp till API 19 inte finns i listan} behöver du installera det.
 Gör det genom att kryssa rutan som dök upp när du valde att skapa en ny enhet och krysssa sedan också AVD Manager.
-Gå sedan i menyn till Android Studio “Tools -> Android -> SDK Manager”, kryssa API 19 i listan (vänta en liten stund om den inte dyker upp direkt) och klicka sedan på installera-knappen.
+Gå sedan i menyn till Android Studio “Tools -> Android -> SDK Manager”, kryssa exempelvis API 19 i listan (vänta en liten stund om den inte dyker upp direkt) och klicka sedan på installera-knappen.
 Nu ska du kunna skapa din enhet med rätt inställningar!\\
 
 Kör din Androidapplikation genom att trycka på “Play” knappen i menyn eller Ctrl+F11, och kryssa sedan i ``Launch emulator'' och välj ``MyDevice'' som du skapade tidigare.
 Notera att Androidemulatorn tar några minuter att starta första gången.
-Stäng inte av emulatorn med krysset mellan körningar för då tar det lång tid att starta varje gång.
+\textbf{Stäng inte av emulatorn med krysset mellan körningar för då tar det lång tid att starta varje gång.}
 
 \section{Todo-app}
 Vi kommer inte i det här kompendiet att gå in på djupet i hur Android fungerar.
-De som arbetat med iOS tidigare kommer att märka att det skiljer sig en hel del och att till exempel vyer hanteras annorlunda.
 Fokus på labben kommer vara att arbeta i Java och nödvändiga Androidspecifika komponenter kommer att beskrivas nedan.
 \begin{figure}[ht!]
 \centering
@@ -294,7 +289,7 @@ Sen är det bara att lägga in texten i form av en String i \textit{adapter}. De
 	\textbf{Uppgift:} Skapa en knapp och ett textfält. När man trycker på knappen skall texten som är i textfältet läggas till i listan.
 	}
 }
-\section{Databaskoppling – varmt rekommenderad extrauppgift}
+\section{Databaskoppling}
 Hittills har vi endast lagrat data i en ArrayList.
 Den tas naturligtvis bort så fort programmet stängs ned.
 Ett smidigare sätt att lagra data för en Todo-lista är att lagra allt i en liten SQL-databas.
