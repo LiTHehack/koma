@@ -73,7 +73,7 @@
 					<aside class="notes">
 						J<br><br>
 
-						Vi ska prata lite om Android i helhet, så att vi alla är på samma plan och så att vi alla snackar om samma sak.
+						Vi pratar lite om Android i helhet, så att vi alla är på samma plan.
 					</aside>
 				</section>
 
@@ -91,11 +91,11 @@
 					<aside class="notes">
 						J<br><br>
 
-						Google skött huvudsaklig utveckling sedan 2005. <br>
-						Stort. Världens största. 1,6 mdr aktiva enheter i juli 2014. <br>
-						Viktigt att erbjuda sin tjänst till mobila enheter -> mer och mer trafik från mobila webbläsare. <br>
-						Utveckling, spännande siffror. Populär grej. Google Play. <br>
-						Varför inte iOS? (Kostar.) Android är gratis och nize. Bygger på Java!
+						Utvecklats huvudsakligt av Google sedan 2005. <br>
+						Stort. Världens största. 1,6 mdr aktiva enheter <b>i juli 2014.</b> <br>
+						 mer och mer trafik från mobila webbläsare -> Viktigt att erbjuda sin tjänst till mobila enheter <br>
+						Spännande siffror, intressant utveckling. <br>
+						Bra över iOS: gratis. Bygger på Java som är välkänt.
 					</aside>
 				</section>
 
@@ -107,9 +107,10 @@
 					<aside class="notes">
 						J<br><br>
 
-						Responsivitet är viktigt. Inte minst i Android-världen. <br>
-						Augusti 2012 såg det ut såhär -> har bara blivit värre sen dess. <br>
-						Illustrerar upplösningarna på olika android-enheter. Många olika alternativ. <br>
+						Responsivitet: anpassning av gränssnitt till olika skärmstorlekar. <br> 
+						Viktigt på webben, likaså i Android-världen. <br>
+						Bild som illustrerar upplösningarna på olika android-enheter. Många olika alternativ. <br>
+						SÅg ut så Augusti 2012 -> blivit värre sen dess. <br>
 						Mycket viktigt att inte göra ett "statiskt" gränssnitt -> tänk på att göra det dynamiskt a.k.a. responsivt.
 					</aside>
 				</section>
@@ -122,8 +123,8 @@
 					<aside class="notes">
 						J<br><br>
 
-						Ej heller har alla användare samma Android-version. Ganska långsam uppdatering till nyare Android-släpp. <br>
-						Ha det i åtanke då ni utvecklar applikationer med funktionalitet från nyare releaser.
+						Annan grej att ha i åtanke: Alla har ej samma Android-version. Långsam uppdatering till nyare Android-släpp. <br>
+						Ha det i åtanke då man utvecklar applikationer med funktionalitet från nyare releaser.
 					</aside>
 				</section>
 
@@ -135,7 +136,7 @@
 					<aside class="notes">
 						J<br><br>
 
-						Enklare situation på iOS-sidan, en handfull olika skärmstorlekar.
+						Om vi jämför med iOS: enklare. En handfull olika skärmstorlekar.
 					</aside>
 				</section>
 
@@ -147,7 +148,7 @@
 					<aside class="notes">
 						J<br><br>
 
-						Snabbare adoption av nya versioner på iOS. Fun fact.
+						Också snabbare adoption av nya versioner på iOS.
 					</aside>
 				</section>
 
@@ -157,7 +158,7 @@
 					<aside class="notes">
 						J<br><br>
 
-						Innan responsivitet också lite om hur en app är upplagd. Det är ett ganska omfattande system, och vi hinner bara skrapa lite på ytan. Men detta i kombination med labben kommer ge er tillräckligt mycket för att komma igång med det. <br>
+						Berättar lite om hur en app är upplagd. Det är ett omfattande system, vi hinner inte gå igenom allt utförligt. Men i kombination med labben kommer det ge tillräckligt mycket för att komma igång. <br>
 						Långt ifrån allt, endast en liten början.
 					</aside>
 				</section>
@@ -233,8 +234,8 @@
 						J<br><br>
 
 						Resurser och tillgångar till appen. <br>
-						Allting är ganska separerat i android, vyer är på ett annat ställe än logik. <br>
-						Bryta ut koden så möjligt, skapa överskådliga strukturer och gör allt lättare att hantera. Fixa med en bild utan att härja med kod.
+						Allting är ganska separerat i android, t.ex vyer är på ett annat ställe än logik som styr dem. <br>
+						Tanken är att bryta ut koden så mycket som går, ha överskådliga strukturer och göra allt lättare att hantera. Man ska inte härja med massa kod för att fixa med en bild.
 					</aside>
 				</section>
 
@@ -274,10 +275,8 @@
 					<aside class="notes">
 						J<br><br>
 
-						Exempel på hiearki. Bilder hör hemma i drawable-mappen, vyer i layout och i values går det att spara saker som textsträngar, stiler osv <br>
-						Inga undermappar, tänk på det. <br>
-						Fler grejer, menu, raw, xml, animator <br>
-						Går att anpassa beroende på telefonen och användarens inställningar.
+						Exempel på hiearki i res/. Bilder hör hemma i drawable-mappen, vyer i layout och i values går det att spara saker som textsträngar, stiler osv <br>
+						Inga undermappar. <br>
 					</aside>
 				</section>
 
@@ -300,12 +299,12 @@
 					<aside class="notes">
 						J<br><br>
 
-						Exempel på hur det kan se ut med flera olika inställningar. <br>
-						"hdpi" vs "ldpi" är high- respektive low dpi. <br>
-						"sw600dp" är vyer som kommer användas på enheter med minst 600dp upplösning. Density-Independent Pixels -> abstrakt pixelmått. <br>
+						Resurserna går att anpassa beroende på olika inställningar, det gör man med qualifiers.
+						Så här kan det se ut. <br>
+						"hdpi" vs "ldpi" är high- respektive low dpi. dpi: Density-Independent Pixels - abstrakt pixelmått<br>
+						"sw600dp" är vyer som kommer användas på enheter med minst 600dp upplösning. <br>
 						values – anpassa tex strängar efter olika länder och platser. Svenska, franska i belgien. <br>
-						Kombinera olika qualifiers. <br>
-						Om ni gör en app enbart för plattor, glöm inte att slänga in detta i manifestet.
+						Kan också kombinera olika qualifiers. <br>
 					</aside>
 				</section>
 
@@ -378,10 +377,10 @@ setContentView(R.layout.main_screen);</code></pre>
 					<aside class="notes">
 						J<br><br>
 
-						I layoutmappen finns de filer som styr de olika vyerna och användargränssnitten för en app. <br>
-						Den kan skrivas antingen i XML (fokus för oss) eller under runtime. (Poängen är att separera.) Ganska likt HTML och JavaScript <br>
-						Också via grafiskt gränssnitt. Labben grafiskt och xml. <br>
-						Responsivt! Gjort för att fylla ut, tex
+						I layoutmappen finns de filer som styr de olika vyerna och själva användargränssnitten för en app. <br>
+						Layouten kan skrivas i java-källkoden, men vanligast och bäst är att skriva separat i XML-kod (Poängen är att separera). Ganska likt HTML. <br>
+						Också via grafiskt gränssnitt, XML genereras. Labben både och. <br>
+						Ang. responsivitet är mycket är gjort för att fylla ut, tex
 					</aside>
 				</section>
 
