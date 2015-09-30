@@ -274,10 +274,10 @@ Om du testkör din app nu, så bör du se både knappen och textfältet som det 
 
 För att kunna interagera med knappen så behöver vi lägga till lyssnare. Detta gör vi i onCreate-metoden. Skapa först knappen genom: \input{code/button}
 
-Nu kan vi anropa metoden \textit{setOnClickListener} på \textit{button}. Som tidigare kan vi skapa en lyssnare direkt i metodanropet
+Dvs, om knappens id är satt som ``add''. Nu kan vi anropa metoden \textit{setOnClickListener} på \textit{button}. Som tidigare kan vi skapa en lyssnare direkt i metodanropet
 \input{code/buttonlistener}
 
-Dvs, om knappen är döpt till ``add''. Som tidigare behövs en överlagrad metod \textit{onClick(View)} i lyssnaren (av typen \textit{public void}). Innan vi kan definera vad knappen ska göra när användaren trycker på den, så måste vi identifiera att användaren har tryckt just på våran knapp.
+Som tidigare behövs en överlagrad metod \textit{onClick(View)} i lyssnaren (av typen \textit{public void}). Innan vi kan definera vad knappen ska göra när användaren trycker på den, så måste vi identifiera att användaren har tryckt just på våran knapp.
 I \textit{onClick} så har vi fått med en View som har den tillhörande metoden \textit{getId()} för att hämta id på det elementet som har aktivierats.
 Se till så att det överensstämmer med id på våran knapp genom att jämföra med \textit{R.id.add}.\\
 
