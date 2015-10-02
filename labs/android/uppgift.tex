@@ -120,12 +120,12 @@ Textfältet “Hello World!” kan du bara ta bort genom att antingen markera de
 
 Skapa en lista genom att dra in elementet “\textit{Container -> ListView}”.
 För att våran aktivitet i appen ska kunna nå listan så måste den få ett lite annorlunda “id” än vad den har nu.
-I “\textit{Properties}” finns det ett fält som heter “Id”.
-Ändra innehållet i det till “\textit{@android:id/list}”. Dvs, om du kontrollerar i layoutens xml-fil ska det i ListView-blocket finnas ett attribut android:id med värdet “\textit{@android:id/list}”. 
+I “\textit{XML-vyn}” finns det en rad som specifierar “android:id”.
+Ändra värdet i det till “\textit{@android:id/list}”. Dvs, i ListView-blocket ska det finnas ett attribut android:id med värdet “\textit{@android:id/list}”. 
 Detta är olyckligtvis lite speciellt när det kommer till just en lista och vi kommer senare att behandla id på ett mer konventionellt sätt när det kommer till knappar och textfält.\\
 
 Nu kan du återgå till koden i filen \textit{MainActivity.java}, som innehåller källkoden för huvudaktiviteten i din app.
-Då vi har valt att skapa en lista i vår Activity, så gör vi bäst i att ärva från ListActivity istället för Activity i vår klass.
+Då vi har valt att skapa en lista i vår Activity, så gör vi bäst i att ärva från ListActivity istället för Activity eller ActionBarActivity i vår klass.
 Ändra så att MainActivity ärver ifrån ListActivity istället för Activity. \\
 
 Notera att på samma sätt som med Log behöver ListActivity importeras. \\
